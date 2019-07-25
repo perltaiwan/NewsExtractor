@@ -1,6 +1,9 @@
 package NewsExtractor;
 our $VERSION = v0.0.1;
 
+sub download;
+sub as_NewsArticle;
+
 1;
 
 __END__
