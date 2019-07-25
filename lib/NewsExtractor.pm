@@ -1,8 +1,27 @@
 package NewsExtractor;
 our $VERSION = v0.0.1;
 
-sub download;
-sub as_NewsArticle;
+use Moose;
+use Types::URI -all;
+use SemanticWeb::Schema::NewsArticle;
+
+has url => ( required => 1, is => 'ro', isa => Uri, coerce => 1 );
+
+no Moose;
+
+sub download {
+    my NewsExtractor $self = shift;
+
+    return $self;
+}
+
+sub as_NewsArticle {
+    return SemanticWeb::Schema::NewsArticle->new(
+        headline => "XXX",
+        dateline => "XXX",
+        creator  => "YYY",
+    );
+}
 
 1;
 
