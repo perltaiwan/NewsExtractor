@@ -1,5 +1,5 @@
 package NewsExtractor::Article;
-use Moose;
+use Moo;
 use NewsExtractor::Types qw< Text Text1K >;
 
 has headline => ( required => 1, is => 'ro', isa => Text1K );

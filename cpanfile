@@ -1,2 +1,2 @@
 requires 'SemanticWeb::Schema';
-requires 'Moose';
+requires 'Moo';

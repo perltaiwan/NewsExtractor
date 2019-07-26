@@ -1,9 +1,10 @@
 use v5.18;
 
 use Test2::V0;
+use URI;
 use NewsExtractor;
 
-my @urls = split /\s+/m, q(
+my @urls = grep { $_ } split /\s+/m, q(
     https://www.ettoday.net/news/20180717/1214873.htm
     https://www.ettoday.net/news/20180717/1214873.htm
     https://www.ettoday.net/news/20181019/1284979.htm
@@ -207,14 +208,20 @@ my @urls = split /\s+/m, q(
     https://www.ettoday.net/news/20190725/1498607.htm
 );
 
-for my $url (@urls) {
-    my ($x, $error) = NewsExtractor->new(url => $url)->download;
+for my $url (map { $urls[rand($#urls)] } 0..3) {
+    my ($error, $x) = NewsExtractor->new(url => $url)->download;
 
     if ($error) {
-        skip "Failed";
+        fail "Download failed: $url";
+        diag $error->message;
     } else {
-        subtest "Extract $url as NewsArticle" => sub {
-            my $y = $x->as_NewsArticle;
+        subtest "Extract: $url" => sub {
+            my $article = $x->parse;
+            ok $article->dateline;
+            ok $article->headline;
+            ok $article->creator;
+
+            my $y = $article->as_NewsArticle;
             ok $y->dateline;
             ok $y->headline;
             ok $y->creator;
