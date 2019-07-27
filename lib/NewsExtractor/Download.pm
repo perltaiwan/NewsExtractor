@@ -7,18 +7,25 @@ has tx => ( required => 1, is => 'ro', isa => InstanceOf['Mojo::Transaction::HTT
 
 use NewsExtractor::Article;
 use NewsExtractor::GenericExtractor;
-use JSON;
+use Try::Tiny;
 
 sub parse {
     my $self = $_[0];
-    my $x = NewsExtractor::GenericExtractor->new( tx => $self->tx );
+    my ($err, $o);
 
-    return NewsExtractor::Article->new(
-        content    => $x->content_text,
-        dateline   => $x->dateline,
-        headline   => $x->headline,
-        journalist => $x->journalist,
-    );
+    my $x = NewsExtractor::GenericExtractor->new( tx => $self->tx );
+    try {
+        $o = NewsExtractor::Article->new(
+            content    => $x->content_text,
+            dateline   => $x->dateline,
+            headline   => $x->headline,
+            journalist => $x->journalist,
+        )
+    } catch {
+        $err = $_;
+    };
+
+    return ($err, $o);
 }
 
 1;
