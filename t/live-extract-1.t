@@ -6,8 +6,8 @@ use Test2::V0;
 use NewsExtractor;
 
 my @urls = (
-    read_file('t/data/urls-success', chomp => 1 ),
     read_file('t/data/urls-fails', chomp => 1 ),
+    read_file('t/data/urls-success', chomp => 1 ),
 );
 
 my (@fails, @success);
@@ -26,7 +26,7 @@ for my $url (@urls) {
                 push @success, $url;
                 ok $article->dateline;
                 ok $article->headline;
-                ok $article->jorunalist;
+                ok $article->journalist;
                 ok $article->content;
             } else {
                 push @fails, $url;
