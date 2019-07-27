@@ -3,6 +3,7 @@ use strict;
 
 use Encode qw(encode decode);
 use Mojo::UserAgent;
+use JSON;
 use Getopt::Long qw< GetOptions >;
 
 use NewsExtractor;
