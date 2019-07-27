@@ -39,10 +39,13 @@ steps:
       - cpanm -q *.tar.gz
 
   - <<: *install_with_cpanm
+    name: Install (perl 5.28)
     image: perl:5.28
 
   - <<: *install_with_cpanm
+    name: Install (perl 5.26)
     image: perl:5.26
 
   - <<: *install_with_cpanm
+    name: Install (perl 5.18)
     image: perl:5.18
