@@ -1,2 +1,11 @@
-requires 'SemanticWeb::Schema';
+requires 'File::Slurp';
+requires 'HTML::ExtractContent';
+requires 'JSON';
+requires 'Module::Functions';
+requires 'Mojolicious';
 requires 'Moo';
+requires 'SemanticWeb::Schema';
+requires 'Test2::V0';
+requires 'Try::Tiny';
+requires 'Type::Tiny';
+requires 'Types::URI';
