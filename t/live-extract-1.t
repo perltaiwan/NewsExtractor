@@ -26,12 +26,8 @@ for my $url (@urls) {
                 push @success, $url;
                 ok $article->dateline;
                 ok $article->headline;
-                ok $article->creator;
-
-                my $y = $article->as_NewsArticle;
-                ok $y->dateline;
-                ok $y->headline;
-                ok $y->creator;
+                ok $article->jorunalist;
+                ok $article->content;
             } else {
                 push @fails, $url;
             }
