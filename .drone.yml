@@ -2,6 +2,11 @@ kind: pipeline
 name: default
 
 steps:
+  - name: Critic
+    image: gugod/perlcritic-reviewdog:20190204
+    commands:
+      - perlcritic --quiet lib t dev-bin
+
   - name: Test
     image: perl:5.28.0
     commands:
