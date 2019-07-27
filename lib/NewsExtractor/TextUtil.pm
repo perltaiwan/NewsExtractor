@@ -4,7 +4,6 @@ use warnings;
 
 use Unicode::UCD qw(charscript);
 
-use Exporter 'import';
 use Module::Functions;
 our @EXPORT = get_public_functions();
     

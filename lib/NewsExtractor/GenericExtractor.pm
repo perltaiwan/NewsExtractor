@@ -5,13 +5,12 @@ use utf8;
 use Moo;
 
 use List::Util qw(max);
-use Encode qw(decode);
 use HTML::ExtractContent;
 use Mojo::DOM;
 use Types::Standard qw(Str InstanceOf Maybe);
 
-use NewsExtractor::TextUtil qw(normalize_whitespace);
-use NewsExtractor::Constants qw(%SNRE);
+use Importer 'NewsExtractor::TextUtil'  => qw( normalize_whitespace );
+use Importer 'NewsExtractor::Constants' => qw( %SNRE );
 
 has tx => ( required => 1, is => 'ro', isa => InstanceOf['Mojo::Transaction::HTTP'] );
 

@@ -1,9 +1,8 @@
 package NewsExtractor::Constants;
+use v5.18;
 use utf8;
-use strict;
 use warnings;
 
-use Exporter 'import';
 use Module::Functions;
 
 our %SNRE;
