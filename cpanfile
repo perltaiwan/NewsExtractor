@@ -1,6 +1,7 @@
 requires 'File::Slurp';
 requires 'HTML::ExtractContent';
 requires 'IO::Socket::SSL', '2.009';
+requires 'Importer';
 requires 'JSON';
 requires 'Module::Functions';
 requires 'Mojolicious';
@@ -10,3 +11,4 @@ requires 'Test2::V0';
 requires 'Try::Tiny';
 requires 'Type::Tiny';
 requires 'Types::URI';
+requires 'YAML';
