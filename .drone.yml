@@ -8,6 +8,7 @@ steps:
       - cpanm -q --notest --no-man-pages --installdeps .
       - cpanm -q --notest --no-man-pages Test2::Harness
       - yath --qvf
+      - git diff
 
   - name: Build the dist
     image: perl:5.28.0
