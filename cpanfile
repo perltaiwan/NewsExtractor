@@ -1,5 +1,6 @@
 requires 'File::Slurp';
 requires 'HTML::ExtractContent';
+requires 'IO::Socket::SSL', '2.009';
 requires 'JSON';
 requires 'Module::Functions';
 requires 'Mojolicious';
