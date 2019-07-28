@@ -7,6 +7,7 @@ has tx => ( required => 1, is => 'ro', isa => InstanceOf['Mojo::Transaction::HTT
 
 use NewsExtractor::Article;
 use NewsExtractor::GenericExtractor;
+use NewsExtractor::Error;
 use Try::Tiny;
 
 sub parse {
@@ -14,15 +15,24 @@ sub parse {
     my ($err, $o);
 
     my $x = NewsExtractor::GenericExtractor->new( tx => $self->tx );
+    my %article = (
+        article_body => $x->content_text,
+        headline     => $x->headline,
+        dateline     => $x->dateline,
+        journalist   => $x->journalist,
+    );
+
+    for my $it (qw(dateline journalist)) {
+        delete $article{$it} unless defined $article{$it};
+    }
+
     try {
-        $o = NewsExtractor::Article->new(
-            content    => $x->content_text,
-            dateline   => $x->dateline,
-            headline   => $x->headline,
-            journalist => $x->journalist,
-        )
+        $o = NewsExtractor::Article->new(%article);
     } catch {
-        $err = $_;
+        $err = NewsExtractor::Error->new(
+            message => $_,
+            debug => \%article,
+        );
     };
 
     return ($err, $o);

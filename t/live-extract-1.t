@@ -31,10 +31,8 @@ for (["urls-success", \&subtest], ["urls-fails", \&todo]) {
                     if ($article) {
                         push @success, $url;
                         pass "parse";
-                        ok $article->dateline, "dateline";
                         ok $article->headline, "headline";
-                        ok $article->journalist, "journalist";
-                        ok $article->content, "content";
+                        ok $article->article_body, "article_body";
                     } else {
                         push @fails, $url;
                         fail "parse";
