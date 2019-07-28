@@ -40,9 +40,15 @@ sub parse {
     try {
         $o = NewsExtractor::Article->new(%article);
     } catch {
+        my $e = $_;
+
+        if (ref($e) && $e->isa('Error::TypeTiny::Assertion')) {
+            $e = $e->message;
+        }
+
         $err = NewsExtractor::Error->new(
-            message => $_,
-            debug => \%article,
+            message => u($e),
+            debug   => { articleArgs => \%article },
         );
     };
 
