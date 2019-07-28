@@ -7,6 +7,8 @@ use Mojo::UserAgent::Transactor;
 use Try::Tiny;
 
 use Types::URI qw< Uri >;
+
+use Importer 'NewsExtractor::TextUtil' => qw(u);
 use NewsExtractor::Error;
 use NewsExtractor::Download;
 
@@ -34,7 +36,7 @@ sub download {
         if ($res->is_error) {
             $error = NewsExtractor::Error->new(
                 is_exception => 0,
-                message => $res->message,
+                message => u($res->message),
             );
         } else {
             $download = NewsExtractor::Download->new( tx => $tx );

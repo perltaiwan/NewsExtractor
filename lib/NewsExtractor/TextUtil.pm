@@ -6,7 +6,13 @@ use Unicode::UCD qw(charscript);
 
 use Module::Functions;
 our @EXPORT = get_public_functions();
-    
+
+sub u($) {
+    my $v = "".$_[0];
+    utf8::upgrade($v) unless utf8::is_utf8($v);
+    return $v;
+}
+
 sub normalize_whitespace {
     local $_ = $_[0];
     s/[\t\x{3000} ]+/ /g;
