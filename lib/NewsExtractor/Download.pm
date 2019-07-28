@@ -8,6 +8,8 @@ has tx => ( required => 1, is => 'ro', isa => InstanceOf['Mojo::Transaction::HTT
 use NewsExtractor::Article;
 use NewsExtractor::GenericExtractor;
 use NewsExtractor::Error;
+use Importer 'NewsExtractor::TextUtil' => qw(u);
+
 use Try::Tiny;
 
 sub parse {
@@ -15,16 +17,25 @@ sub parse {
     my ($err, $o);
 
     my $x = NewsExtractor::GenericExtractor->new( tx => $self->tx );
-    my %article = (
-        article_body => $x->content_text,
-        headline     => $x->headline,
-        dateline     => $x->dateline,
-        journalist   => $x->journalist,
-    );
+    my %article;
+    $article{headline}     = $x->headline;
+    $article{article_body} = $x->content_text;
 
     for my $it (qw(dateline journalist)) {
-        delete $article{$it} unless defined $article{$it};
+        my $v = $x->$it;
+        if (defined($v)) {
+            $article{$it} = $v;
+        }
     }
+
+    for my $it (qw(headline article_body)) {
+        unless(defined($article{$it})) {
+            $err = NewsExtractor::Error->new(
+                message => u("Failed to extract: $it")
+            )
+        }
+    }
+    return ($err, undef) if $err;
 
     try {
         $o = NewsExtractor::Article->new(%article);
