@@ -25,11 +25,14 @@ sub download {
 
     my $tx = $ua->get( "". $self->url );
 
-    my $res = try { $tx->result } catch {
+    my $res;
+    try {
+        $res = $tx->result
+    } catch {
         $error = NewsExtractor::Error->new(
             is_exception => 0,
-            message => $_
-        );
+            message => u($_),
+        )
     };
 
     if ($res) {
