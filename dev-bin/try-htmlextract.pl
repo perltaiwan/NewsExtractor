@@ -12,17 +12,25 @@ my %opts;
 GetOptions(
     \%opts,
 );
-
 my $url = shift @ARGV or die;
-
-my $x = NewsExtractor->new( url => $url );
-my ($err, $article) = $x->download->parse;
 
 my $dumper = YAML::Dumper->new;
 $dumper->indent_width(4);
-if ($article) {
-    print encode( "utf8" => $dumper->dump({ %$article }) );
+
+my $x = NewsExtractor->new( url => $url );
+my ($err, $y) = $x->download;
+
+if ($err) {
+    print "Download Failed\n";
+    print $dumper->dump({ message => $err->message, debug => $err->debug });
+
 } else {
-    print "No Article\n";
-    $dumper->dump({ message => $err->message, debug => $err->debug });
+    ($err, my $article) = $y->parse;
+
+    if ($article) {
+        print encode( "utf8" => $dumper->dump({ %$article }) );
+    } else {
+        print "No Article\n";
+        print $dumper->dump({ message => $err->message, debug => $err->debug });
+    }
 }
