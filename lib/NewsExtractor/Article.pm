@@ -14,7 +14,7 @@ __END__
 
 =head1 Name
 
-NewsExtractor::Article
+NewsExtractor::Article - A data class for containing news article.
 
 =head1 Description
 
