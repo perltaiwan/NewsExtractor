@@ -53,13 +53,14 @@ NewsExtractor -- download and extract news articles from Internet.
 
 =head1 SYNOPSIS
 
-    my $extractor = NewsExtractor->new( url => $url );
-    my $x = $extractor->download();
+    my ($error, $article) = NewsExtractor->new( url => $url )->download->parse;
+    die $error if $error;
 
-    # https://metacpan.org/pod/SemanticWeb::Schema::NewsArticle
-    $o = $x->as_NewsArticle;
-
-=head1 DESCRIPTION
+    # $article is an instance of NewsExtractor::Article
+    say "Headline: " . $article->headline;
+    say "When: " . ($article->dateline // "(unknown)");
+    say "By: " . ($article->journalist // "(unknown)");
+    say "\n" . $article->content_text;
 
 =head1 AUTHOR
 
