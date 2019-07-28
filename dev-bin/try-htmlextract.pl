@@ -16,12 +16,13 @@ GetOptions(
 my $url = shift @ARGV or die;
 
 my $x = NewsExtractor->new( url => $url );
-my $article = $x->download->parse;
+my ($err, $article) = $x->download->parse;
 
+my $dumper = YAML::Dumper->new;
+$dumper->indent_width(4);
 if ($article) {
-    my $dumper = YAML::Dumper->new;
-    $dumper->indent_width(4);
     print encode( "utf8" => $dumper->dump({ %$article }) );
 } else {
     print "No Article\n";
+    $dumper->dump({ message => $err->message, debug => $err->debug });
 }
