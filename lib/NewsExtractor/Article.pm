@@ -35,7 +35,7 @@ Mandatory. Str. Refer to the body of a news article.
 
 Optional. One must check the presense of this attribute with C<has_dateline>
 method before taking the value of it.
-(
+
 =item journalist
 
 Optional. One must check the presense of this attribute with C<has_journalist>

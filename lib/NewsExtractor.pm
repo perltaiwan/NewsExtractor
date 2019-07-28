@@ -62,6 +62,10 @@ NewsExtractor -- download and extract news articles from Internet.
     say "By: " . ($article->journalist // "(unknown)");
     say "\n" . $article->content_text;
 
+=head1 SEE Also
+
+L<NewsExtractor::Article>
+
 =head1 AUTHOR
 
 Kang-min Liu <gugod@gugod.org>
