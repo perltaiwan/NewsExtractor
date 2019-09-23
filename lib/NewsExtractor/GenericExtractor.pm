@@ -4,6 +4,7 @@ use utf8;
 
 use Moo;
 
+use Encode qw(decode);
 use List::Util qw(max);
 use HTML::ExtractContent;
 use Mojo::DOM;
@@ -21,7 +22,26 @@ has site_name => (
 
 no Moo;
 
-sub dom { $_[0]->tx->result->dom }
+sub dom {
+    my $tx = $_[0]->tx;
+    my $dom = $tx->result->dom;
+
+    my $charset;
+    if ($tx->result->headers->content_type =~ /charset=(\S+)/) {
+        $charset = $1;
+    } elsif (my $el = $dom->at('meta[http-equiv="content-type"]')) {
+        if ($el->attr("content") =~ /\;charset=(\S+)/) {
+            $charset = $1;
+        }
+    }
+
+    if ($charset) {
+        my $body = decode($charset, $tx->result->body);
+        $dom = Mojo::DOM->new($body);
+    }
+
+    return $dom;
+}
 
 sub _build_site_name {
     my ($self) = @_;
