@@ -11,7 +11,7 @@ use Mojo::DOM;
 use Types::Standard qw(Str InstanceOf Maybe);
 
 use Importer 'NewsExtractor::TextUtil'  => qw( normalize_whitespace );
-use Importer 'NewsExtractor::Constants' => qw( %SNRE );
+use Importer 'NewsExtractor::Constants' => qw( %RE );
 
 has tx => ( required => 1, is => 'ro', isa => InstanceOf['Mojo::Transaction::HTTP'] );
 
@@ -78,8 +78,8 @@ sub headline {
     }
     if (defined($title)) {
         my $delim = qr<(?: \p{Punct} | \| )>x;
-        $title =~ s/ \s* $delim \s* $SNRE{newspaper_names} \s* \z//x;
-        $title =~ s/\A $SNRE{newspaper_names} \s* $delim \s* //x;
+        $title =~ s/ \s* $delim \s* $RE{newspaper_names} \s* \z//x;
+        $title =~ s/\A $RE{newspaper_names} \s* $delim \s* //x;
         $title =~ s/\r\n/\n/g;
         $title =~ s/\A\s+//;
         $title =~ s/\s+\z//;
@@ -254,7 +254,7 @@ sub content_text {
         $paragraphs[-1] =~ s/${site_name}//x;
     }
 
-    $paragraphs[-1] =~ s/\A \s* \p{Punct}? \s* $SNRE{newspaper_names} \s* \p{Punct}? \s* \z//x;
+    $paragraphs[-1] =~ s/\A \s* \p{Punct}? \s* $RE{newspaper_names} \s* \p{Punct}? \s* \z//x;
 
     pop @paragraphs if $paragraphs[-1] eq '';
 
