@@ -29,8 +29,8 @@ sub dom {
     my $charset;
     if ($tx->result->headers->content_type =~ /charset=(\S+)/) {
         $charset = $1;
-    } elsif (my $el = $dom->at('meta[http-equiv="content-type"]')) {
-        if ($el->attr("content") =~ /\;charset=(\S+)/) {
+    } elsif (my $el = $dom->at('meta[http-equiv="content-type" i]')) {
+        if ($el->attr("content") =~ /\;\s*charset=(\S+)/i) {
             $charset = $1;
         }
     }
