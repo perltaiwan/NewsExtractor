@@ -1,8 +1,5 @@
 use v5.28;
-use strict;
-
 use Encode qw(encode);
-use Mojo::UserAgent;
 use YAML::Dumper;
 use Getopt::Long qw< GetOptions >;
 
