@@ -19,18 +19,18 @@ has extractor => (
 );
 
 use constant CSSRuleSetByHost => {
-    'www.rvn.com.tw'  => NewsExtractor::CSSRuleSet->new(
+    'www.rvn.com.tw'  => {
         headline     => 'td[height=30][align=CENTER] b font',
         dateline     => 'tr > td[align=left] > b > font[style="font-size:11pt;"]',
         journalist   => 'tr > td[align=left] > b > font[style="font-size:11pt;"]',
         content_text => 'td[colspan=2] > p > span[style="font-size:16px"]',
-    ),
-    'www.enewstw.com' =>  NewsExtractor::CSSRuleSet->new(
+    },
+    'www.enewstw.com' =>  {
         headline     => 'td.blog_title > strong',
         dateline     => 'td.blog_title tr:nth-child(2) > td.blog',
         journalist   => 'td.blog_title tr:nth-child(1) > td.blog',
         content_text => 'td.new_t p',
-    ),
+    },
 };
 
 sub _build_extractor {
@@ -40,7 +40,7 @@ sub _build_extractor {
     my $extractor;
     if (my $sel = CSSRuleSetByHost->{$host}) {
         $extractor = NewsExtractor::CSSExtractor->new(
-            css_selector => $sel,
+            css_selector => NewsExtractor::CSSRuleSet->new(%$sel),
             tx => $self->tx
         );
     } else {
