@@ -6,7 +6,7 @@ use Types::Standard qw< InstanceOf >;
 has tx => ( required => 1, is => 'ro', isa => InstanceOf['Mojo::Transaction::HTTP']);
 
 use NewsExtractor::Article;
-use NewsExtractor::GenericExtractor;
+use NewsExtractor::Extractor;
 use NewsExtractor::Error;
 use Importer 'NewsExtractor::TextUtil' => qw(u);
 
@@ -16,7 +16,7 @@ sub parse {
     my $self = $_[0];
     my ($err, $o);
 
-    my $x = NewsExtractor::GenericExtractor->new( tx => $self->tx );
+    my $x = NewsExtractor::Extractor->new( tx => $self->tx );
     my %article;
     $article{headline}     = $x->headline;
     $article{article_body} = $x->content_text;
