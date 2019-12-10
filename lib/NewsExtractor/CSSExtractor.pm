@@ -9,7 +9,7 @@ use Types::Standard qw( InstanceOf );
 has css_selector => (
     required => 1,
     is => 'ro',
-    isa => InstanceOf['NewsExtractor::ExtractableWithCSS']
+    isa => InstanceOf['NewsExtractor::CSSRuleSet']
 );
 
 sub headline {

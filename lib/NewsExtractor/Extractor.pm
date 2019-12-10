@@ -3,7 +3,7 @@ use Moo;
 use Mojo::Transaction::HTTP;
 use Mojo::URL;
 use Types::Standard qw(InstanceOf);
-use NewsExtractor::ExtractableWithCSS;
+use NewsExtractor::CSSRuleSet;
 use NewsExtractor::CSSExtractor;
 use NewsExtractor::GenericExtractor;
 
@@ -18,14 +18,14 @@ has extractor => (
     handles => [qw( headline dateline journalist content_text )],
 );
 
-use constant CSSSelectorByHost => {
-    'www.rvn.com.tw'  => NewsExtractor::ExtractableWithCSS->new(
+use constant CSSRuleSetByHost => {
+    'www.rvn.com.tw'  => NewsExtractor::CSSRuleSet->new(
         headline     => 'td[height=30][align=CENTER] b font',
         dateline     => 'tr > td[align=left] > b > font[style="font-size:11pt;"]',
         journalist   => 'tr > td[align=left] > b > font[style="font-size:11pt;"]',
         content_text => 'td[colspan=2] > p > span[style="font-size:16px"]',
     ),
-    'www.enewstw.com' =>  NewsExtractor::ExtractableWithCSS->new(
+    'www.enewstw.com' =>  NewsExtractor::CSSRuleSet->new(
         headline     => 'td.blog_title > strong',
         dateline     => 'td.blog_title tr:nth-child(2) > td.blog',
         journalist   => 'td.blog_title tr:nth-child(1) > td.blog',
@@ -38,7 +38,7 @@ sub _build_extractor {
     my $url = $self->tx->req->url;
     my $host = $url->host;
     my $extractor;
-    if (my $sel = CSSSelectorByHost->{$host}) {
+    if (my $sel = CSSRuleSetByHost->{$host}) {
         $extractor = NewsExtractor::CSSExtractor->new(
             css_selector => $sel,
             tx => $self->tx

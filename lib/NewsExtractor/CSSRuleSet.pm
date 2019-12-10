@@ -1,4 +1,4 @@
-package NewsExtractor::ExtractableWithCSS;
+package NewsExtractor::CSSRuleSet;
 use v5.18;
 use utf8;
 use Moo;
