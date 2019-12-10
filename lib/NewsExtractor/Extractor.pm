@@ -19,12 +19,18 @@ has extractor => (
 );
 
 use constant CSSSelectorByHost => {
+    'www.rvn.com.tw'  => NewsExtractor::ExtractableWithCSS->new(
+        headline     => 'td[height=30][align=CENTER] b font',
+        dateline     => 'tr > td[align=left] > b > font[style="font-size:11pt;"]',
+        journalist   => 'tr > td[align=left] > b > font[style="font-size:11pt;"]',
+        content_text => 'td[colspan=2] > p > span[style="font-size:16px"]',
+    ),
     'www.enewstw.com' =>  NewsExtractor::ExtractableWithCSS->new(
         headline     => 'td.blog_title > strong',
         dateline     => 'td.blog_title tr:nth-child(2) > td.blog',
         journalist   => 'td.blog_title tr:nth-child(1) > td.blog',
         content_text => 'td.new_t p',
-    )
+    ),
 };
 
 sub _build_extractor {
