@@ -1,19 +1,21 @@
 package NewsExtractor::Extractor;
 use Moo;
+extends 'NewsExtractor::TXExtractor';
+
 use Mojo::Transaction::HTTP;
 use Mojo::URL;
 use Types::Standard qw(InstanceOf);
 use NewsExtractor::CSSRuleSet;
 use NewsExtractor::CSSExtractor;
+use NewsExtractor::JSONLDExtractor;
 use NewsExtractor::GenericExtractor;
 use NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw;
-
-has tx => ( required => 1, is => 'ro', isa => InstanceOf['Mojo::Transaction::HTTP'] );
 
 has extractor => (
     required => 0,
     is => 'lazy',
     isa => InstanceOf["NewsExtractor::CSSExtractor",
+                      "NewsExtractor::JSONLDExtractor",
                       "NewsExtractor::SiteSpecificExtractor",
                       "NewsExtractor::GenericExtractor"],
     builder => 1,
@@ -22,7 +24,8 @@ has extractor => (
 
 use constant {
     SiteSpecificExtractorByHost => {
-        'www.rvn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw'
+        'www.rvn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw',
+        'www.chinatimes.com' => 'NewsExtractor::JSONLDExtractor',
     },
     CSSRuleSetByHost => {
         'www.epochtimes.com' => {

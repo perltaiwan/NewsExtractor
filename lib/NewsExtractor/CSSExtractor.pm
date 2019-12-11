@@ -2,7 +2,7 @@ package NewsExtractor::CSSExtractor;
 use v5.18;
 use utf8;
 use Moo;
-extends 'NewsExtractor::GenericExtractor';
+extends 'NewsExtractor::TXExtractor';
 
 use Types::Standard qw( InstanceOf );
 
