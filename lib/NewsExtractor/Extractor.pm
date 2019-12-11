@@ -25,6 +25,12 @@ use constant {
         'www.rvn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw'
     },
     CSSRuleSetByHost => {
+        'www.epochtimes.com' => {
+            headline     => 'h1.title',
+            dateline     => 'header[role=heading] time[datetime]',
+            journalist   => '#artbody > p:nth-last-child(4)',
+            content_text => '#artbody p',
+        },
         'www.enewstw.com' =>  {
             headline     => 'td.blog_title > strong',
             dateline     => 'td.blog_title tr:nth-child(2) > td.blog',

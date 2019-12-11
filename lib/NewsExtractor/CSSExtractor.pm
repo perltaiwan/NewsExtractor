@@ -12,24 +12,32 @@ has css_selector => (
     isa => InstanceOf['NewsExtractor::CSSRuleSet']
 );
 
+sub _take {
+    my ($self, $sel) = @_;
+    my $txt = "". $self->dom->find( $sel )->map('all_text')->join("\n\n");
+    $txt =~ s/\s+$//;
+    $txt =~ s/^\s+//;
+    return $txt;
+}
+
 sub headline {
     my ($self) = @_;
-    return $self->dom->at( $self->css_selector->headline )->text;
+    return $self->_take($self->css_selector->headline);
 }
 
 sub dateline {
     my ($self) = @_;
-    return $self->dom->at( $self->css_selector->dateline )->text;
+    return $self->_take( $self->css_selector->dateline );
 }
 
 sub journalist {
     my ($self) = @_;
-    return $self->dom->at( $self->css_selector->journalist )->text;
+    return $self->_take( $self->css_selector->journalist );
 }
 
 sub content_text {
     my ($self) = @_;
-    return $self->dom->at( $self->css_selector->content_text )->text;
+    return "". $self->_take( $self->css_selector->content_text );
 }
 
 1;
