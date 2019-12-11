@@ -6,6 +6,7 @@ use Types::Standard qw(InstanceOf);
 use NewsExtractor::CSSRuleSet;
 use NewsExtractor::CSSExtractor;
 use NewsExtractor::GenericExtractor;
+use NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw;
 
 has tx => ( required => 1, is => 'ro', isa => InstanceOf['Mojo::Transaction::HTTP'] );
 
@@ -13,24 +14,24 @@ has extractor => (
     required => 0,
     is => 'lazy',
     isa => InstanceOf["NewsExtractor::CSSExtractor",
+                      "NewsExtractor::SiteSpecificExtractor",
                       "NewsExtractor::GenericExtractor"],
     builder => 1,
     handles => [qw( headline dateline journalist content_text )],
 );
 
-use constant CSSRuleSetByHost => {
-    'www.rvn.com.tw'  => {
-        headline     => 'td[height=30][align=CENTER] b font',
-        dateline     => 'tr > td[align=left] > b > font[style="font-size:11pt;"]',
-        journalist   => 'tr > td[align=left] > b > font[style="font-size:11pt;"]',
-        content_text => 'td[colspan=2] > p > span[style="font-size:16px"]',
+use constant {
+    SiteSpecificExtractorByHost => {
+        'www.rvn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw'
     },
-    'www.enewstw.com' =>  {
-        headline     => 'td.blog_title > strong',
-        dateline     => 'td.blog_title tr:nth-child(2) > td.blog',
-        journalist   => 'td.blog_title tr:nth-child(1) > td.blog',
-        content_text => 'td.new_t p',
-    },
+    CSSRuleSetByHost => {
+        'www.enewstw.com' =>  {
+            headline     => 'td.blog_title > strong',
+            dateline     => 'td.blog_title tr:nth-child(2) > td.blog',
+            journalist   => 'td.blog_title tr:nth-child(1) > td.blog',
+            content_text => 'td.new_t p',
+        }
+    }
 };
 
 sub _build_extractor {
@@ -43,6 +44,8 @@ sub _build_extractor {
             css_selector => NewsExtractor::CSSRuleSet->new(%$sel),
             tx => $self->tx
         );
+    } elsif (my $extractor_class = SiteSpecificExtractorByHost->{$host}) {
+        $extractor = $extractor_class->new( tx => $self->tx );
     } else {
         $extractor = NewsExtractor::GenericExtractor->new( tx => $self->tx );
     }
