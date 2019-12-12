@@ -15,8 +15,8 @@ GetOptions(
 
 my @urls;
 
-if (-p STDIN) {
-    @urls = <STDIN>;
+if (! -t STDIN) {
+    @urls = map { chomp; $_ } <STDIN>;
 } else {
     @urls = @ARGV;
 }
