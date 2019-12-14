@@ -37,6 +37,7 @@ use constant {
         '妞新聞 niusnews',
         '阿波羅網手機版',
         '數位台灣地方新聞',
+        'ETtoday新聞雲',
     ],
 
     CATEGORY_NAMES => [
