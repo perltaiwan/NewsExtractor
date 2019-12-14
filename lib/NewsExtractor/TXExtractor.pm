@@ -7,7 +7,14 @@ has tx => (
     required => 1, is => 'ro',
     isa => InstanceOf['Mojo::Transaction::HTTP'] );
 
-sub dom {
+has dom => (
+    required => 0,
+    isa => InstanceOf['Mojo::DOM'],
+    is => 'lazy',
+    builder => 1,
+);
+
+sub _build_dom {
     my $tx = $_[0]->tx;
     my $dom = $tx->result->dom;
 
