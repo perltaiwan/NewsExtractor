@@ -1,5 +1,8 @@
+v0.0.5
+	GenericExtractor can now extract directly from HTML file.
+
 v0.0.4
-	Introduce JSONLD-based extractor.
+        Introduce JSONLD-based extractor.
 
 v0.0.3
         Introduce CSS-based site-specific extractors.
