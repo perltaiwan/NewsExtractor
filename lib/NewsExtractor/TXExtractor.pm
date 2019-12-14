@@ -4,8 +4,10 @@ use Types::Standard qw( InstanceOf );
 use Encode 'decode';
 
 has tx => (
-    required => 1, is => 'ro',
-    isa => InstanceOf['Mojo::Transaction::HTTP'] );
+    required => 0,
+    is => 'ro',
+    isa => InstanceOf['Mojo::Transaction::HTTP']
+);
 
 has dom => (
     required => 0,
