@@ -38,6 +38,7 @@ use constant {
         '阿波羅網手機版',
         '數位台灣地方新聞',
         'ETtoday新聞雲',
+        'ETtoday旅遊雲',
     ],
 
     CATEGORY_NAMES => [
