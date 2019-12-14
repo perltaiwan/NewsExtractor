@@ -21,6 +21,7 @@ steps:
   - name: Build
     image: perl:5.28.0
     depends_on:
+      - Critic
       - Test
     commands:
       - cpanm -q --notest --no-man-pages App::ModuleBuildTiny
