@@ -4,8 +4,12 @@ use warnings;
 
 use Unicode::UCD qw(charscript);
 
-use Module::Functions;
-our @EXPORT = get_public_functions();
+our @EXPORT = (
+    'u',
+    'normalize_whitespace',
+    'remove_spaces',
+    'segmentation_by_script',
+);
 
 sub u($) {
     my $v = "".$_[0];

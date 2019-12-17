@@ -3,10 +3,12 @@ use v5.18;
 use utf8;
 use warnings;
 
-use Module::Functions;
-
 our %RE;
-our @EXPORT_OK = ('%RE', get_public_functions());
+our @EXPORT_OK = (
+    '%RE',
+    'NEWSPAPER_NAMES',
+    'CATEGORY_NAMES'
+);
 
 use constant {
     NEWSPAPER_NAMES => [
