@@ -5,7 +5,7 @@ steps:
   - name: Critic
     depends_on:
       - clone
-    image: gugod/perlcritic-reviewdog:20190204
+    image: gugod/perlcritic-reviewdog:latest
     commands:
       - perlcritic --quiet lib t dev-bin
 
