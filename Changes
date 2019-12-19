@@ -1,3 +1,6 @@
+v0.0.6
+        Handle "utf-8" charset correctly.
+
 v0.0.5
 	GenericExtractor can now extract directly from HTML file.
 
