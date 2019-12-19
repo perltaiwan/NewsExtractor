@@ -1,7 +1,7 @@
 package NewsExtractor::TXExtractor;
 use Moo;
 use Types::Standard qw( InstanceOf );
-use Encode 'decode';
+use Encode 'find_encoding';
 
 has tx => (
     required => 0,
@@ -30,8 +30,11 @@ sub _build_dom {
     }
 
     if ($charset) {
-        my $body = decode($charset, $tx->result->body);
-        $dom = Mojo::DOM->new($body);
+        my $enc = find_encoding( $charset );
+        if ($enc) {
+            my $body = $enc->decode($tx->result->body);
+            $dom = Mojo::DOM->new($body);
+        }
     }
 
     return $dom;
