@@ -17,7 +17,7 @@ sub u($) {
 
 sub normalize_whitespace {
     local $_ = $_[0];
-    s/[\t\x{3000} ]+/ /g;
+    s/\h+/ /g;
     s/\r\n/\n/g;
     s/\A\s+//;
     s/\s+\z//;
