@@ -2,8 +2,6 @@ package NewsExtractor::TextUtil;
 use strict;
 use warnings;
 
-use Unicode::UCD qw(charscript);
-
 our @EXPORT = (
     'u',
     'normalize_whitespace',
