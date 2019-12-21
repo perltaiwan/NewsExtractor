@@ -24,7 +24,7 @@ steps:
       - Critic
       - Test
     commands:
-      - cpanm -q --notest --no-man-pages App::ModuleBuildTiny Software::License::PD
+      - cpanm -q --notest --no-man-pages App::ModuleBuildTiny Software::License::CCpack
       - git clean -xdf
       - mbtiny dist
       - ls -l
