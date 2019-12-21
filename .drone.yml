@@ -24,7 +24,16 @@ steps:
       - Critic
       - Test
     commands:
-      - cpanm -q --notest --no-man-pages App::ModuleBuildTiny Software::License::CCpack
+      - cpanm -q --notest --no-man-pages App::ModuleBuildTiny Dist::Zilla Dist::Zilla::PluginBundle::RJBS
+      - wget https://github.com/gugod/Software-License/archive/improve-cc0-detection.zip
+      - unzip improve-cc0-detection.zip
+      - cd Software-License-improve-cc0-detection
+      - git init
+      - git add .
+      - git commit -m 'no comment'
+      - git tag 0.103013
+      - dzil install
+      - cd ..
       - git clean -xdf
       - mbtiny dist
       - ls -l
