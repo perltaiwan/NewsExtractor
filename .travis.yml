@@ -1,6 +1,6 @@
 language: perl
 perl:
-  - "5.30"
+  - "5.28"
 
 before_install:
   - perl -V
@@ -17,6 +17,8 @@ before_install:
   - rm -rf Software-License-improve-cc0-detection
   - git clean -xdf
   - mbtiny dist
+
+script:
   - echo *.tar.gz
   - cpanm --verbose *.tar.gz
 
