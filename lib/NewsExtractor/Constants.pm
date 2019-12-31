@@ -34,6 +34,7 @@ use constant {
         '中華日報新聞網',
         '健康遠見',
         '台灣好新聞 TaiwanHot.net',
+        '天下雜誌',
         '女人迷Womany',
         '妞新聞 niusnews',
         '工商時報',
