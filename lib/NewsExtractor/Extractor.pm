@@ -10,6 +10,7 @@ use NewsExtractor::CSSExtractor;
 use NewsExtractor::JSONLDExtractor;
 use NewsExtractor::GenericExtractor;
 use NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw;
+use NewsExtractor::SiteSpecificExtractor::www_allnews_tw;
 
 has extractor => (
     required => 0,
@@ -24,6 +25,7 @@ has extractor => (
 
 use constant {
     SiteSpecificExtractorByHost => {
+        'www.allnews.tw' => 'NewsExtractor::SiteSpecificExtractor::www_allnews_tw',
         'www.rvn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw',
         'www.chinatimes.com' => 'NewsExtractor::JSONLDExtractor',
     },
