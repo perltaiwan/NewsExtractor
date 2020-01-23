@@ -28,6 +28,7 @@ use constant {
         'www.allnews.tw' => 'NewsExtractor::SiteSpecificExtractor::www_allnews_tw',
         'www.rvn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw',
         'www.chinatimes.com' => 'NewsExtractor::JSONLDExtractor',
+        'video.udn.com' => 'NewsExtractor::JSONLDExtractor',
     },
     CSSRuleSetByHost => {
         'www.epochtimes.com' => {
