@@ -12,6 +12,7 @@ use NewsExtractor::GenericExtractor;
 use NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_allnews_tw;
 use NewsExtractor::SiteSpecificExtractor::www_peopo_org;
+use NewsExtractor::SiteSpecificExtractor::www_ntdtv_com;
 
 has extractor => (
     required => 0,
@@ -32,6 +33,7 @@ use constant {
         'video.udn.com' => 'NewsExtractor::JSONLDExtractor',
         'www.ctwant.com' => 'NewsExtractor::JSONLDExtractor',
         'www.peopo.org' => 'NewsExtractor::SiteSpecificExtractor::www_peopo_org',
+        'www.ntdtv.com' => 'NewsExtractor::SiteSpecificExtractor::www_ntdtv_com',
     },
     CSSRuleSetByHost => {
         'www.epochtimes.com' => {
