@@ -24,6 +24,7 @@ sub journalist {
         (
             新唐人亞太電視\p{Letter}+?報導
             | （\s* 記者\p{Letter}+報導/責任編輯：\p{Letter}+ \s*）
+            | （\s* 責任編輯：\p{Letter}+ \s*）
         )
         \z}xs;
 
