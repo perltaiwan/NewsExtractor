@@ -7,8 +7,6 @@ use NewsExtractor;
 
 skip_all 'Live tests: set env TEST_LIVE=1 to actually run tests.' unless $ENV{TEST_LIVE};
 
-my (@fails, @success);
-
 my $fn = 't/data/urls';
 my @urls = read_file($fn, chomp => 1 );
 
@@ -21,7 +19,7 @@ while (@urls) {
         fail "Download failed: $url";
         diag $error->message;
     } else {
-        my $ok = subtest(
+        subtest(
             "Extract: $url" => sub {
                 my $article = $x->parse;
                 if ($article) {
@@ -34,15 +32,7 @@ while (@urls) {
                     fail "parse";
                 }
             });
-        if ($ok) {
-            push @success, $url;
-        } else {
-            push @fails, $url
-        }
     }
 }
-
-write_file('t/data/urls-success', join("\n", @success));
-write_file('t/data/urls-fails', join("\n", @fails));
 
 done_testing;
