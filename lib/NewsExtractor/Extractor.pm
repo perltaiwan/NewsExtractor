@@ -13,6 +13,7 @@ use NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_allnews_tw;
 use NewsExtractor::SiteSpecificExtractor::www_peopo_org;
 use NewsExtractor::SiteSpecificExtractor::www_ntdtv_com;
+use NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw;
 
 has extractor => (
     required => 0,
@@ -34,6 +35,7 @@ use constant {
         'www.ctwant.com' => 'NewsExtractor::JSONLDExtractor',
         'www.peopo.org' => 'NewsExtractor::SiteSpecificExtractor::www_peopo_org',
         'www.ntdtv.com' => 'NewsExtractor::SiteSpecificExtractor::www_ntdtv_com',
+        'www.ksnews.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw',
     },
     CSSRuleSetByHost => {
         'www.epochtimes.com' => {
