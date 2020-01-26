@@ -38,6 +38,12 @@ use constant {
         'www.ksnews.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw',
     },
     CSSRuleSetByHost => {
+        'www.nownews.com' => {
+            headline   => 'h1.entry-title',
+            dateline   => 'span.td-post-date:nth-child(2) > time:nth-child(1)',
+            journalist => '.td-post-author-name',
+            content_text => '.td-post-content > span:nth-child(4)',
+        },
         'www.epochtimes.com' => {
             headline     => 'h1.title',
             dateline     => 'header[role=heading] time[datetime]',
