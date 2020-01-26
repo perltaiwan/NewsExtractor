@@ -20,7 +20,7 @@ sub dateline {
 sub journalist {
     my ($self) = @_;
     my $text = $self->content_text;
-    my ($name) = $text =~ m{更生日報即時新聞／記者(.+?)／報導};
+    my ($name) = $text =~ m{\b\V+[╱／]記者(.+?)／?報導\b};
     return $name;
 }
 
