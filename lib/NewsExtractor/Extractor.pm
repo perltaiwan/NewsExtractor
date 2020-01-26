@@ -42,7 +42,7 @@ use constant {
             headline   => 'h1.entry-title',
             dateline   => 'span.td-post-date:nth-child(2) > time:nth-child(1)',
             journalist => '.td-post-author-name',
-            content_text => '.td-post-content > span:nth-child(4)',
+            content_text => '.td-post-content > span[itemprop=articleBody]',
         },
         'www.epochtimes.com' => {
             headline     => 'h1.title',
