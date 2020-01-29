@@ -1,51 +1,44 @@
-v0.5.0
-        - Released at 2020-01-29T10:30:00+0900
-        - Improve the extraction of a few news site.
+0.5.0 2020-01-29T10:30:00+0900
+- Improve the extraction of a few news site.
 
-v0.4.0
-        - Released at 2020-01-26T01:51:45+0900
-        - Improve the extraction of a few news site.
+0.4.0 2020-01-26T01:51:45+0900
+- Improve the extraction of a few news site.
 
-v0.3.0
-        2020-01-26T01:51:45+0900
-        Improve the extraction of a few news site.
+0.3.0 2020-01-26T01:51:45+0900
+- Improve the extraction of a few news site.
 
-v0.2.0
-        2020-01-25T23:23:39+0900
-        Improve the extraction of a specific news site.
+0.2.0 2020-01-25T23:23:39+0900
+- Improve the extraction of a specific news site.
 
-v0.1.1
-        2020-01-24T11:13:11+0900
-        Fix an fat-finger mistake.
+0.1.1 2020-01-24T11:13:11+0900
+- Fix an fat-finger mistake.
 
-v0.1.0
-        2020-01-24T09:16:11+0900
-	Improve the extraction of a few news sites.
+0.1.0 2020-01-24T09:16:11+0900
+- Improve the extraction of a few news sites.
 
-v0.0.9
-	Improve the recall of a specific news site.
+0.0.9
+- Improve the recall of a specific news site.
 
-v0.0.8
-        2020-01-20T22:08:39+0900
-        Improve the extraction of journalist names on a few more news sites.
+0.0.8 2020-01-20T22:08:39+0900
+- Improve the extraction of journalist names on a few more news sites.
 
-v0.0.7
-        Remove a bunch of wastes.
+0.0.7
+- Remove a bunch of wastes.
 
-v0.0.6
-        Handle "utf-8" charset correctly.
+0.0.6
+- Handle "utf-8" charset correctly.
 
-v0.0.5
-	GenericExtractor can now extract directly from HTML file.
+0.0.5
+- GenericExtractor can now extract directly from HTML file.
 
-v0.0.4
-        Introduce JSONLD-based extractor.
+0.0.4
+- Introduce JSONLD-based extractor.
 
-v0.0.3
-        Introduce CSS-based site-specific extractors.
+0.0.3
+- Introduce CSS-based site-specific extractors.
 
-v0.0.2
-	Improvements on error-handling.
+0.0.2
+- Improvements on error-handling.
 
-v0.0.1
-	Inital Release
+0.0.1
+- Inital Release
