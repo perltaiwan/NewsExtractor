@@ -57,6 +57,12 @@ use constant {
             dateline     => 'td.blog_title tr:nth-child(2) > td.blog',
             journalist   => 'td.blog_title tr:nth-child(1) > td.blog',
             content_text => 'td.new_t p',
+        },
+        'www.storm.mg' =>  {
+            headline     => 'h1#article_title',
+            dateline     => 'span#info_time',
+            journalist   => '#article_info_wrapper #author_block a.link_author > span.info_author',
+            content_text => 'div#article_inner_wrapper > article:nth-child(1)',
         }
     }
 };
