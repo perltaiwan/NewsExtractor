@@ -1,3 +1,8 @@
+v0.6.0
+        - Reject the extracted journalist name if it happens to be one of the
+          known newspaper name.
+        - Improve the extraction of https://www.storm.mg
+
 v0.5.0
         - Released at 2020-01-29T10:30:00+0900
         - Improve the extraction of a few news site.
