@@ -62,6 +62,8 @@ use constant {
         '青年日報',
         '風傳媒',
         '食力 foodNEXT',
+        'Storm.mg',
+        '國語日報',
     ],
 
     CATEGORY_NAMES => [
