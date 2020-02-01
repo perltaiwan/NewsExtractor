@@ -9,6 +9,7 @@ use List::Util qw(max);
 use HTML::ExtractContent;
 use Mojo::DOM;
 use Types::Standard qw(Str Maybe);
+use NewsExtractor::Types qw(is_NewspaperName);
 
 use Importer 'NewsExtractor::TextUtil'  => qw( normalize_whitespace );
 use Importer 'NewsExtractor::Constants' => qw( %RE );
@@ -208,7 +209,11 @@ sub journalist {
         }
     }
 
-    $ret = normalize_whitespace($ret) if $ret;
+    if ($ret) {
+        $ret = normalize_whitespace($ret);
+        $ret = "" if is_NewspaperName($ret);
+    }
+
     return $ret;
 }
 
