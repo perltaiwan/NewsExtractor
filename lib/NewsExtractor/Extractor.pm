@@ -44,6 +44,12 @@ use constant {
         'house.udn.com' => 'NewsExtractor::SiteSpecificExtractor::money_udn_com',
     },
     CSSRuleSetByHost => {
+        'udn.com' => {
+            headline   => '#story_art_title',
+            dateline   => '.story_bady_info_author > span:nth-child(1)',
+            journalist => '.story_bady_info_author > a:nth-child(2)',
+            content_text => 'div#article_body',
+        },
         'www.nownews.com' => {
             headline   => 'h1.entry-title',
             dateline   => 'span.td-post-date:nth-child(2) > time:nth-child(1)',
