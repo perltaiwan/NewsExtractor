@@ -1,3 +1,10 @@
+v0.7.0 2020-02-02T10:28:00+0900
+  - Improve the extraction of www.taipeitimes.com
+  - Improve the extraction of udn.com
+  - Improve the extraction of money.udn.com
+  - Improve the extraction of stars.udn.com
+  - Improve the extraction of house.udn.com
+
 v0.6.0 2020-02-01T19:51:00+0900
   - Reject the extracted journalist name if it happens to be one of the known newspaper name.
   - Improve the extraction of https://www.storm.mg
