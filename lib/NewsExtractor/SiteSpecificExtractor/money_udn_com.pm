@@ -7,7 +7,7 @@ use Importer 'NewsExtractor::TextUtil' => 'normalize_whitespace';
 
 sub headline {
     my ($self) = @_;
-    my $el = $self->dom->at('h2#story_art_title');
+    my $el = $self->dom->at('#story_art_title');
     my $txt = $el->all_text;
     return normalize_whitespace($txt);
 }

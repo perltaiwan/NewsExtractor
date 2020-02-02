@@ -39,6 +39,7 @@ use constant {
         'www.ntdtv.com' => 'NewsExtractor::SiteSpecificExtractor::www_ntdtv_com',
         'www.ksnews.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw',
         'news.tvbs.com.tw' => 'NewsExtractor::SiteSpecificExtractor::news_tvbs_com_tw',
+        'stars.udn.com' => 'NewsExtractor::SiteSpecificExtractor::money_udn_com',
         'money.udn.com' => 'NewsExtractor::SiteSpecificExtractor::money_udn_com',
     },
     CSSRuleSetByHost => {
