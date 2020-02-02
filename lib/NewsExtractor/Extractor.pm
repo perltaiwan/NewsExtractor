@@ -15,9 +15,9 @@ use NewsExtractor::SiteSpecificExtractor::www_peopo_org;
 use NewsExtractor::SiteSpecificExtractor::www_ntdtv_com;
 use NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw;
 use NewsExtractor::SiteSpecificExtractor::news_tvbs_com_tw;
-use NewsExtractor::SiteSpecificExtractor::money_udn_com;
 use NewsExtractor::SiteSpecificExtractor::www_taipeitimes_com;
-use NewsExtractor::SiteSpecificExtractor::house_ettoday_net;
+use NewsExtractor::SiteSpecificExtractor::UDN;
+use NewsExtractor::SiteSpecificExtractor::ETtoday;
 
 has extractor => (
     required => 0,
@@ -41,12 +41,12 @@ use constant {
         'www.ntdtv.com' => 'NewsExtractor::SiteSpecificExtractor::www_ntdtv_com',
         'www.ksnews.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw',
         'news.tvbs.com.tw' => 'NewsExtractor::SiteSpecificExtractor::news_tvbs_com_tw',
-        'stars.udn.com' => 'NewsExtractor::SiteSpecificExtractor::money_udn_com',
-        'money.udn.com' => 'NewsExtractor::SiteSpecificExtractor::money_udn_com',
-        'house.udn.com' => 'NewsExtractor::SiteSpecificExtractor::money_udn_com',
+        'stars.udn.com' => 'NewsExtractor::SiteSpecificExtractor::UDN',
+        'money.udn.com' => 'NewsExtractor::SiteSpecificExtractor::UDN',
+        'house.udn.com' => 'NewsExtractor::SiteSpecificExtractor::UDN',
         'www.taipeitimes.com' => 'NewsExtractor::SiteSpecificExtractor::www_taipeitimes_com',
-        'www.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::house_ettoday_net',
-        'house.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::house_ettoday_net',
+        'www.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
+        'house.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
     },
     CSSRuleSetByHost => {
         'udn.com' => {
