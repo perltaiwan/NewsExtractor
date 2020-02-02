@@ -48,6 +48,7 @@ use constant {
         'www.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
         'star.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
         'house.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
+        'health.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
     },
     CSSRuleSetByHost => {
         'udn.com' => {
