@@ -11,7 +11,7 @@ use Mojo::DOM;
 use Types::Standard qw(Str Maybe);
 use NewsExtractor::Types qw(is_NewspaperName);
 
-use Importer 'NewsExtractor::TextUtil'  => qw( normalize_whitespace );
+use Importer 'NewsExtractor::TextUtil'  => qw( normalize_whitespace html2text );
 use Importer 'NewsExtractor::Constants' => qw( %RE );
 
 has site_name => (
@@ -231,12 +231,9 @@ sub content_text {
         $html = $extractor->extract( $self->dom->to_string )->as_html;
     }
 
-    $content_dom = Mojo::DOM->new('<body>' . $html . '</body>');
-    $content_dom->find('br')->map(replace => "\n");
-    $content_dom->find('div,p')->map(append => "\n\n");
+    my $text = html2text( $html );
 
-    my @paragraphs = grep { $_ ne '' } map { normalize_whitespace($_) } split /\n\n+/, $content_dom->all_text;
-    return unless @paragraphs;
+    my @paragraphs = split /\n\n/, $text;
 
     if (my $site_name = $self->site_name) {
         $paragraphs[-1] =~ s/\A \s* \p{Punct}? \s* ${site_name} \s* \p{Punct}? \s* \z//x;
@@ -244,8 +241,6 @@ sub content_text {
     }
 
     $paragraphs[-1] =~ s/\A \s* \p{Punct}? \s* $RE{newspaper_names} \s* \p{Punct}? \s* \z//x;
-
-    pop @paragraphs if $paragraphs[-1] eq '';
 
     if (max( map { length($_) } @paragraphs ) < 30) {
         # err "[$$] Not enough contents";
