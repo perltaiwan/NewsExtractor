@@ -16,6 +16,7 @@ use NewsExtractor::SiteSpecificExtractor::www_ntdtv_com;
 use NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw;
 use NewsExtractor::SiteSpecificExtractor::news_tvbs_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_taipeitimes_com;
+use NewsExtractor::SiteSpecificExtractor::www_rti_org_tw;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 
@@ -49,6 +50,7 @@ use constant {
         'star.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
         'house.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
         'health.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
+        'www.rti.org.tw' => 'NewsExtractor::SiteSpecificExtractor::www_rti_org_tw',
     },
     CSSRuleSetByHost => {
         'udn.com' => {
