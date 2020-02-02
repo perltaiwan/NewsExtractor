@@ -15,6 +15,7 @@ use NewsExtractor::SiteSpecificExtractor::www_peopo_org;
 use NewsExtractor::SiteSpecificExtractor::www_ntdtv_com;
 use NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw;
 use NewsExtractor::SiteSpecificExtractor::news_tvbs_com_tw;
+use NewsExtractor::SiteSpecificExtractor::money_udn_com;
 
 has extractor => (
     required => 0,
@@ -38,6 +39,7 @@ use constant {
         'www.ntdtv.com' => 'NewsExtractor::SiteSpecificExtractor::www_ntdtv_com',
         'www.ksnews.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw',
         'news.tvbs.com.tw' => 'NewsExtractor::SiteSpecificExtractor::news_tvbs_com_tw',
+        'money.udn.com' => 'NewsExtractor::SiteSpecificExtractor::money_udn_com',
     },
     CSSRuleSetByHost => {
         'www.nownews.com' => {
