@@ -46,6 +46,7 @@ use constant {
         'house.udn.com' => 'NewsExtractor::SiteSpecificExtractor::UDN',
         'www.taipeitimes.com' => 'NewsExtractor::SiteSpecificExtractor::www_taipeitimes_com',
         'www.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
+        'star.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
         'house.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::ETtoday',
     },
     CSSRuleSetByHost => {
