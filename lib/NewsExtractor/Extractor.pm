@@ -17,6 +17,7 @@ use NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw;
 use NewsExtractor::SiteSpecificExtractor::news_tvbs_com_tw;
 use NewsExtractor::SiteSpecificExtractor::money_udn_com;
 use NewsExtractor::SiteSpecificExtractor::www_taipeitimes_com;
+use NewsExtractor::SiteSpecificExtractor::house_ettoday_net;
 
 has extractor => (
     required => 0,
@@ -44,6 +45,7 @@ use constant {
         'money.udn.com' => 'NewsExtractor::SiteSpecificExtractor::money_udn_com',
         'house.udn.com' => 'NewsExtractor::SiteSpecificExtractor::money_udn_com',
         'www.taipeitimes.com' => 'NewsExtractor::SiteSpecificExtractor::www_taipeitimes_com',
+        'house.ettoday.net' => 'NewsExtractor::SiteSpecificExtractor::house_ettoday_net',
     },
     CSSRuleSetByHost => {
         'udn.com' => {
