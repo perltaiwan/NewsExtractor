@@ -19,6 +19,7 @@ use NewsExtractor::SiteSpecificExtractor::www_taipeitimes_com;
 use NewsExtractor::SiteSpecificExtractor::www_rti_org_tw;
 use NewsExtractor::SiteSpecificExtractor::www_bcc_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_setn_com;
+use NewsExtractor::SiteSpecificExtractor::news_tnn_tw;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 
@@ -55,6 +56,7 @@ use constant {
         'www.rti.org.tw' => 'NewsExtractor::SiteSpecificExtractor::www_rti_org_tw',
         'www.bcc.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_bcc_com_tw',
         'www.setn.com' => 'NewsExtractor::SiteSpecificExtractor::www_setn_com',
+        'news.tnn.tw' => 'NewsExtractor::SiteSpecificExtractor::news_tnn_tw',
     },
     CSSRuleSetByHost => {
         'udn.com' => {
