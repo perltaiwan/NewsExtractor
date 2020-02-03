@@ -21,8 +21,12 @@ sub dateline {
 
 sub journalist {
     my ($self) = @_;
-    my ($txt) = $self->content_text =~ m{。 [（\(] (\p{Letter}+?) 報導 [）\)] \n\n}x;
-    return $txt;
+    my $content = $self->content_text;
+    my ($o) = $content =~ m{。 [（\(] (\p{Letter}+?) 報導 [）\)] \n\n}x;
+    unless ($o) {
+        ($o) = $content =~ m{。 [（\(] 中廣記者 (\p{Letter}+?) [）\)] \z}x;
+    }
+    return $o;
 }
 
 sub content_text {
