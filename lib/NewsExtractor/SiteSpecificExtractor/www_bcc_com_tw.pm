@@ -21,13 +21,19 @@ sub dateline {
 
 sub journalist {
     my ($self) = @_;
-    my ($txt) = $self->content_text =~ m{。 \( (\p{Letter}+?) 報導 \) \n\n}x;
+    my ($txt) = $self->content_text =~ m{。 [（\(] (\p{Letter}+?) 報導 [）\)] \n\n}x;
     return $txt;
 }
 
 sub content_text {
     my ($self) = @_;
-    my $el = $self->dom->at('#some-class-name');
+    my $el;
+
+    for $el ($self->dom->find('script, div.ft')->each) {
+        $el->remove();
+    }
+
+    $el = $self->dom->at('#some-class-name');
     return html2text( $el->to_string );
 }
 
