@@ -70,6 +70,8 @@ use constant {
         'USTV 非凡電視台',
         'NOW健康',
         'Taiwan News',
+        '翻報',
+        '翻爆 - 翻報',
     ],
 
     CATEGORY_NAMES => [
