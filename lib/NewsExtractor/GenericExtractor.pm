@@ -171,6 +171,8 @@ sub journalist {
         ($ret) = $guess->text =~ m<(責任編輯.+)\z>x;
     }
 
+    $ret = undef if ($ret && is_NewspaperName($ret));
+
     if ( !$ret && (my $content_text = $self->content_text)) {
         my @patterns = (
             qr<\b (?:特[約派])? [记記]者 \s* ([\s\p{Letter}、]+?) \s* [/╱／] \s* (?: 特稿 | 專訪 | \p{Letter}+ (?:報導|报导)) \b>xs,
@@ -193,7 +195,8 @@ sub journalist {
             qr<\A  記者 (\p{Letter}+) ／報導 >x,
             qr<\A  \[ (記者.+報導) \] >x,
             qr<\A  （ (記者.+報導) ） >x,
-            qr<\A 【(本報記者.+報導)】 >x
+            qr<\A 【(本報記者.+報導)】 >x,
+            qr<\b ﹝記者(\p{Letter}+?)／.+?報導﹞ \b>x,
         );
 
         for my $pat (@patterns) {
