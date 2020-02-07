@@ -61,6 +61,12 @@ use constant {
         'turnnewsapp.com' => 'NewsExtractor::SiteSpecificExtractor::turnnewsapp_com',
     },
     CSSRuleSetByHost => {
+        'www.taiwannews.com.tw' => {
+            headline => 'h1.article-title',
+            dateline => 'div.article-date',
+            journalist => 'div.article-author',
+            content_text => 'article.article',
+        },
         'udn.com' => {
             headline   => '#story_art_title',
             dateline   => '.story_bady_info_author > span:nth-child(1)',

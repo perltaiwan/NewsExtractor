@@ -1,3 +1,5 @@
+  - Improve the accuracy of extracting www.taiwannews.com.tw
+
 v0.10.0 2020-02-04T09:01:00+0900
   - Improve the extraction of turnnewsapp.com
   - Improve coverage for various cases.
