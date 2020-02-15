@@ -21,6 +21,7 @@ use NewsExtractor::SiteSpecificExtractor::www_bcc_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_setn_com;
 use NewsExtractor::SiteSpecificExtractor::news_tnn_tw;
 use NewsExtractor::SiteSpecificExtractor::turnnewsapp_com;
+use NewsExtractor::SiteSpecificExtractor::news_cts_com_tw;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 
@@ -59,6 +60,7 @@ use constant {
         'www.setn.com' => 'NewsExtractor::SiteSpecificExtractor::www_setn_com',
         'news.tnn.tw' => 'NewsExtractor::SiteSpecificExtractor::news_tnn_tw',
         'turnnewsapp.com' => 'NewsExtractor::SiteSpecificExtractor::turnnewsapp_com',
+        'news.cts.com.tw' => 'NewsExtractor::SiteSpecificExtractor::news_cts_com_tw',
     },
     CSSRuleSetByHost => {
         'www.taiwannews.com.tw' => {
