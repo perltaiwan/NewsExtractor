@@ -4,18 +4,21 @@ use Importer 'NewsExtractor::TextUtil' => qw(u);
 use NewsExtractor::Types qw(is_Text);
 
 subtest "Strings without control characters" => sub {
-    for my $v ("123", "中央社", "123 中央社") {
+    for my $v ("123", "中央社", "123 中央社", "你好\n世界") {
         utf8::upgrade($v);
-        ok is_Text($v);
+        ok is_Text($v), "is Text: $v";
         utf8::downgrade($v);
-        ok !is_Text($v);
+        ok !is_Text($v), "is not Text: $v";
     }
 };
 
 subtest "String with control characters" => sub {
-    my $v = "你好\x07世界";
-    utf8::upgrade($v);
-    ok !is_Text($v);
+    for my $v ("你好\t世界", "你好\x07世界") {
+        utf8::upgrade($v);
+        ok !is_Text($v), "is not Text: $v";
+        utf8::downgrade($v);
+        ok !is_Text($v), "is not Text: $v";
+    }
 };
 
 subtest "In combination with `u`" => sub {
