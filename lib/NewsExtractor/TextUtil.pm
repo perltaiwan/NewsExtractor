@@ -11,6 +11,8 @@ our @EXPORT = (
 );
 
 sub u($) {
+    defined($_[0]) or return undef;
+
     my $v = "".$_[0];
     return is_utf8($v) ? $v : decode_utf8($v);
 }
