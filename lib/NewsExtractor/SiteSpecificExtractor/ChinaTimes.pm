@@ -9,7 +9,7 @@ sub content_text {
     my ($self) = @_;
     # my $text = $self->schema_ld->{articleBody} // $self->schema_ld->{description} // '';
     my $body = $self->tx->result->dom->at("div.article-body");
-    $body->at(".article-hash-tag")->remove();
+    $body->find(".article-hash-tag")->map('remove');
     my $text = html2text( $body->content );
     return $text;
 }
