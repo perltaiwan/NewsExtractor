@@ -169,6 +169,8 @@ sub journalist {
         $ret = $guess->text;
     } elsif ($guess = $dom->at('.fncnews-content > .info > span.small-gray-text')) {
         ($ret) = $guess->text =~ m<(責任編輯.+)\z>x;
+    } elsif ($guess = $dom->at('div.single-post-meta a[rel="author"]')) {
+        ($ret) = $guess->text =~ m<^工商時報 (.+)\z>x;
     }
 
     $ret = undef if ($ret && is_NewspaperName($ret));
