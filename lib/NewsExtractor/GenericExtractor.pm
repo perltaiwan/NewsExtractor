@@ -167,8 +167,6 @@ sub journalist {
         ($ret) = $guess->all_text =~ m{\A 【 (記者 .+) 】}x;
     } elsif ($guess = $dom->at('#details_block .left .name, .articleMain .article-author a.author-title, .article__credit a[href^="/author/"], span[itemprop=author] span[itemprop=name], .post-header-additional .post-meta-info a.nickname')) {
         $ret = $guess->text;
-    } elsif ($guess = $dom->at('.fncnews-content > .info > span.small-gray-text')) {
-        ($ret) = $guess->text =~ m<(責任編輯.+)\z>x;
     } elsif ($guess = $dom->at('div.single-post-meta a[rel="author"]')) {
         ($ret) = $guess->text =~ m<^工商時報 (.+)\z>x;
     }

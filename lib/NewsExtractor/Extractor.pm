@@ -25,6 +25,7 @@ use NewsExtractor::SiteSpecificExtractor::news_cts_com_tw;
 use NewsExtractor::SiteSpecificExtractor::estate_ltn_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_upmedia_mg;
 use NewsExtractor::SiteSpecificExtractor::ctee_com_tw;
+use NewsExtractor::SiteSpecificExtractor::news_ebc_net_tw;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 use NewsExtractor::SiteSpecificExtractor::ChinaTimes;
@@ -68,6 +69,7 @@ use constant {
         'estate.ltn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::estate_ltn_com_tw',
         'www.upmedia.mg' => 'NewsExtractor::SiteSpecificExtractor::www_upmedia_mg',
         'ctee.com.tw' => 'NewsExtractor::SiteSpecificExtractor::ctee_com_tw',
+        'news.ebc.net.tw' => 'NewsExtractor::SiteSpecificExtractor::news_ebc_net_tw',
     },
     CSSRuleSetByHost => {
         'www.taiwannews.com.tw' => {
