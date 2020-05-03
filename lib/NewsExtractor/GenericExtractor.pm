@@ -35,7 +35,6 @@ sub _build_site_name {
 sub headline {
     my ($self) = @_;
 
-    my $site_name = $self->site_name;
     my ($title, $el);
     my $dom = $self->dom;
     if ($el = $dom->at("#story #news_title, #news_are .newsin_title, .data_midlle_news_box01 dl td:first-child")) {
@@ -51,7 +50,7 @@ sub headline {
     }
     $title .= "";
 
-    if ($site_name) {
+    if (my $site_name = $self->site_name) {
         $title =~ s/\s* \p{Punct} \s* $site_name \s* \z//x;
     }
     if (defined($title)) {
