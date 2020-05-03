@@ -5,6 +5,19 @@ extends 'NewsExtractor::GenericExtractor';
 
 use Importer 'NewsExtractor::TextUtil' => 'normalize_whitespace';
 
+sub _build_content_text {
+    my ($self) = @_;
+
+    # Remove the in-article ad.
+    $self->dom->find("#contentb p > a[href^='https://bit.ly/']")->grep(
+        sub {
+            ($_->parent->children->size == 1)
+            && ($_->text =~ m/^★/)
+        })->map('remove');
+
+    return $self->SUPER::_build_content_text();
+}
+
 sub journalist {
     my ($self) = @_;
     my $guess = $self->dom->at('.fncnews-content > .info > span.small-gray-text') or return;
