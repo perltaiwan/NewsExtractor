@@ -28,6 +28,7 @@ use NewsExtractor::SiteSpecificExtractor::ctee_com_tw;
 use NewsExtractor::SiteSpecificExtractor::news_ebc_net_tw;
 use NewsExtractor::SiteSpecificExtractor::newnet_tw;
 use NewsExtractor::SiteSpecificExtractor::www_thestandnews_com;
+use NewsExtractor::SiteSpecificExtractor::www_hkcnews_com;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 use NewsExtractor::SiteSpecificExtractor::ChinaTimes;
@@ -45,6 +46,7 @@ has extractor => (
 
 use constant {
     SiteSpecificExtractorByHost => {
+        'www.hkcnews.com' => 'NewsExtractor::SiteSpecificExtractor::www_hkcnews_com',
         'www.thestandnews.com' => 'NewsExtractor::SiteSpecificExtractor::www_thestandnews_com',
         'www.allnews.tw' => 'NewsExtractor::SiteSpecificExtractor::www_allnews_tw',
         'www.rvn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw',
