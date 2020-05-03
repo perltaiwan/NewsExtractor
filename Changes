@@ -1,3 +1,5 @@
+  - Properly handle non-article pages.
+
 v0.18.0 2020-05-03T19:53:12+0800
   - Add a site-specific for www.ttv.com.tw
   - Add a site-specific for www.hkcnews.com

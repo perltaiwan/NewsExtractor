@@ -18,6 +18,8 @@ sub _take {
 
     $self->dom->find("$sel style, $sel script")->map('remove');
     my $txt = "". $self->dom->find( $sel )->map('all_text')->join("\n\n");
+    return undef if $txt eq '';
+
     $txt =~ s/\s+$//;
     $txt =~ s/^\s+//;
     $txt = normalize_whitespace($txt);
