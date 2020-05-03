@@ -1,4 +1,5 @@
   - Improve the extraction of journalist names on cnews, EBC, CTEE and SETN
+  - Add a site-specific extractor for newnet.tw
 
 v0.16.0 2020-04-26T21:36:41+0800
   - Improve the extraction of journalist names on CTS, CTEE and rti.fr

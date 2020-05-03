@@ -198,6 +198,7 @@ sub journalist {
             qr<\A  （ (記者.+報導) ） >x,
             qr<\A 【(本報記者.+報導)】 >x,
             qr<\b ﹝記者(\p{Letter}+?)／.+?報導﹞ \b>x,
+            qr<\A〔新網記者 ( \p{Letter}+ (?:報導|特稿))〕\b>x,
         );
 
         for my $pat (@patterns) {
