@@ -1,6 +1,6 @@
-  - Improve the extraction of journalist names on EBC, CTEE and SETN
+  - Improve the extraction of journalist names on cnews, EBC, CTEE and SETN
 
-(v0.16.0 2020-04-26T21:36:41+0800
+v0.16.0 2020-04-26T21:36:41+0800
   - Improve the extraction of journalist names on CTS, CTEE and rti.fr
 
 v0.15.0 2020-04-23T09:17:50+0800
