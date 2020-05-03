@@ -79,6 +79,7 @@ use constant {
         '大紀元',
         '大纪元',
         'Taipei Times',
+        '台視新聞',
     ],
 
     CATEGORY_NAMES => [
