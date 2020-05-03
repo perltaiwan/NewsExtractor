@@ -21,7 +21,7 @@ has site_name => (
 
 has content_text => (
     is => "lazy",
-    isa => Str,
+    isa => Maybe[Str],
 );
 
 no Moo;
