@@ -77,6 +77,7 @@ use constant {
         'TVBS新聞網',
         '台灣時報 | 電子報',
         '大紀元',
+        '大纪元',
         'Taipei Times',
     ],
 
