@@ -1,5 +1,6 @@
   - Add a site-specific for www.hkcnews.com
   - Add a site-specific for www.thestandnews.com
+  - Add a site-specific for www.epochtimes.com
 
 v0.17.0 2020-05-03T09:15:32+0800
   - Improve the extraction of journalist names on cnews, EBC, CTEE and SETN

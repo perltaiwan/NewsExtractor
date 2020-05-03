@@ -29,6 +29,7 @@ use NewsExtractor::SiteSpecificExtractor::news_ebc_net_tw;
 use NewsExtractor::SiteSpecificExtractor::newnet_tw;
 use NewsExtractor::SiteSpecificExtractor::www_thestandnews_com;
 use NewsExtractor::SiteSpecificExtractor::www_hkcnews_com;
+use NewsExtractor::SiteSpecificExtractor::www_epochtimes_com;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 use NewsExtractor::SiteSpecificExtractor::ChinaTimes;
@@ -46,6 +47,7 @@ has extractor => (
 
 use constant {
     SiteSpecificExtractorByHost => {
+        'www.epochtimes.com' => 'NewsExtractor::SiteSpecificExtractor::www_epochtimes_com',
         'www.hkcnews.com' => 'NewsExtractor::SiteSpecificExtractor::www_hkcnews_com',
         'www.thestandnews.com' => 'NewsExtractor::SiteSpecificExtractor::www_thestandnews_com',
         'www.allnews.tw' => 'NewsExtractor::SiteSpecificExtractor::www_allnews_tw',
@@ -95,12 +97,6 @@ use constant {
             dateline   => 'span.td-post-date:nth-child(2) > time:nth-child(1)',
             journalist => '.td-post-author-name',
             content_text => '.td-post-content > span[itemprop=articleBody]',
-        },
-        'www.epochtimes.com' => {
-            headline     => 'h1.title',
-            dateline     => 'header[role=heading] time[datetime]',
-            journalist   => '#artbody > p:nth-last-child(4)',
-            content_text => '#artbody p',
         },
         'www.enewstw.com' =>  {
             headline     => 'td.blog_title > strong',
