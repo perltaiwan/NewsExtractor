@@ -19,6 +19,11 @@ has site_name => (
     isa => Maybe[Str],
 );
 
+has content_text => (
+    is => "lazy",
+    isa => Str,
+);
+
 no Moo;
 
 sub _build_site_name {
@@ -221,7 +226,7 @@ sub journalist {
     return $ret;
 }
 
-sub content_text {
+sub _build_content_text {
     my ($self) = @_;
     my ($el, $html);
 
