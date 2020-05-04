@@ -66,7 +66,7 @@ sub headline {
         $title =~ s/\A\s+//;
         $title =~ s/\s+\z//;
     }
-    return $title;
+    return $title && normalize_whitespace($title);
 }
 
 sub dateline {
