@@ -36,7 +36,7 @@ sub headline {
 
 sub dateline {
     my ($self) = @_;
-    my $ret = $self->_take($self->css_selector->headline) or return;
+    my $ret = $self->_take($self->css_selector->dateline) or return;
     $ret =~ s/\n/ /g;
     return normalize_whitespace($ret);
 }
