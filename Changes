@@ -1,3 +1,4 @@
+v0.19.0 2020-05-04T14:01:50+0800
   - UDN: Update the CSS ruleset for udn.com
   - Add a site-specific extractor for www.idn.com.tw
   - Niusnews: Extract journalist name
