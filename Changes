@@ -1,3 +1,4 @@
+  - Niusnews: Extract journalist name
   - SETN: Non-human journalist names are now extracted too.
   - Properly handle non-article pages.
 
