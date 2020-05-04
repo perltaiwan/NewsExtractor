@@ -31,6 +31,7 @@ use NewsExtractor::SiteSpecificExtractor::www_thestandnews_com;
 use NewsExtractor::SiteSpecificExtractor::www_hkcnews_com;
 use NewsExtractor::SiteSpecificExtractor::www_epochtimes_com;
 use NewsExtractor::SiteSpecificExtractor::www_ttv_com_tw;
+use NewsExtractor::SiteSpecificExtractor::www_idn_com_tw;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 use NewsExtractor::SiteSpecificExtractor::ChinaTimes;
@@ -80,6 +81,7 @@ use constant {
         'news.ebc.net.tw' => 'NewsExtractor::SiteSpecificExtractor::news_ebc_net_tw',
         'newnet.tw' => 'NewsExtractor::SiteSpecificExtractor::newnet_tw',
         'www.ttv.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_ttv_com_tw',
+        'www.idn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_idn_com_tw',
     },
     CSSRuleSetByHost => {
         'www.taiwannews.com.tw' => {

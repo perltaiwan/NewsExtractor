@@ -1,12 +1,13 @@
+  - Add a site-specific extractor for www.idn.com.tw
   - Niusnews: Extract journalist name
   - SETN: Non-human journalist names are now extracted too.
   - Properly handle non-article pages.
 
 v0.18.0 2020-05-03T19:53:12+0800
-  - Add a site-specific for www.ttv.com.tw
-  - Add a site-specific for www.hkcnews.com
-  - Add a site-specific for www.thestandnews.com
-  - Add a site-specific for www.epochtimes.com
+  - Add a site-specific extractor for www.ttv.com.tw
+  - Add a site-specific extractor for www.hkcnews.com
+  - Add a site-specific extractor for www.thestandnews.com
+  - Add a site-specific extractor for www.epochtimes.com
 
 v0.17.0 2020-05-03T09:15:32+0800
   - Improve the extraction of journalist names on cnews, EBC, CTEE and SETN
