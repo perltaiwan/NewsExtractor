@@ -1,3 +1,4 @@
+  - SETN: Non-human journalist names are now extracted too.
   - Properly handle non-article pages.
 
 v0.18.0 2020-05-03T19:53:12+0800
