@@ -1,3 +1,4 @@
+  - UDN: Update the CSS ruleset for udn.com
   - Add a site-specific extractor for www.idn.com.tw
   - Niusnews: Extract journalist name
   - SETN: Non-human journalist names are now extracted too.

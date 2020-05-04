@@ -91,10 +91,10 @@ use constant {
             content_text => 'article.article',
         },
         'udn.com' => {
-            headline   => '#story_art_title',
-            dateline   => '.story_bady_info_author > span:nth-child(1)',
-            journalist => '.story_bady_info_author > a:nth-child(2)',
-            content_text => 'div#article_body',
+            headline   => 'h1.article-content__title',
+            dateline   => '.authors time.article-content__time',
+            journalist => '.authors span.article-content__author',
+            content_text => 'div.article-content__paragraph section.article-content__editor',
         },
         'www.nownews.com' => {
             headline   => 'h1.entry-title',

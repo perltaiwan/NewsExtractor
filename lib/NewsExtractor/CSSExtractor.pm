@@ -29,17 +29,23 @@ sub _take {
 
 sub headline {
     my ($self) = @_;
-    return $self->_take($self->css_selector->headline);
+    my $ret = $self->_take($self->css_selector->headline) or return;
+    $ret =~ s/\n/ /g;
+    return normalize_whitespace($ret);
 }
 
 sub dateline {
     my ($self) = @_;
-    return $self->_take( $self->css_selector->dateline );
+    my $ret = $self->_take($self->css_selector->headline) or return;
+    $ret =~ s/\n/ /g;
+    return normalize_whitespace($ret);
 }
 
 sub journalist {
     my ($self) = @_;
-    return $self->_take( $self->css_selector->journalist );
+    my $ret = $self->_take( $self->css_selector->journalist ) or return;
+    $ret =~ s/\n/ /g;
+    return normalize_whitespace($ret);
 }
 
 sub content_text {
