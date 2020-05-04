@@ -81,7 +81,7 @@ sub dateline {
     elsif ($guess = $dom->at("time[itemprop=datePublished][datetime], h1 time[datetime], .func_time time[pubdate]")) {
         $dateline = $guess->attr('datetime');
     }
-    elsif ($guess = $dom->at(".reporter time, span.time, span.viewtime, header.article-desc time, .timeBox .updatetime span, .caption div.label-date, .contents_page span.date, .main-content span.date, .newsin_date, .news .date, .author .date, ul.info > li.date > span:nth-child(2), #newsHeadline span.datetime, article p.date, .post-meta > .icon-clock > span, .article_info_content span.info_time, .content time.page-date, .c_time, .newsContent p.time, .story_bady_info_author span:nth-child(1), div.title > div.time, div.article-meta div.article-date, address.authorInfor time, .entry-meta .date a, .author-links .posts-date, .top_title span.post_time, .mid-news > .m-left-side > .maintype-wapper > h2, .node-inner > .submitted > span, ")) {
+    elsif ($guess = $dom->at(".reporter time, span.time, span.viewtime, header.article-desc time, .timeBox .updatetime span, .caption div.label-date, .contents_page span.date, .main-content span.date, .newsin_date, .news .date, .author .date, ul.info > li.date > span:nth-child(2), #newsHeadline span.datetime, article p.date, .post-meta > .icon-clock > span, .article_info_content span.info_time, .content time.page-date, .c_time, .newsContent p.time, .story_bady_info_author span:nth-child(1), div.title > div.time, div.article-meta div.article-date, address.authorInfor time, .entry-meta .date a, .author-links .posts-date, .top_title span.post_time, .mid-news > .m-left-side > .maintype-wapper > h2, .node-inner > .submitted > span")) {
         $dateline = $guess->text;
     }
     elsif ($guess = $dom->at("div#articles cite")) {
@@ -119,7 +119,7 @@ sub dateline {
         ($dateline) = $guess->text =~ m#([0-9]{1,2}\s*月\s*[0-9]{1,2}(\s*日\s*)?,\s*[0-9]{4})#x;
     }
     elsif ($guess = $dom->at('#story #news_author')) {
-        ($dateline) = $guess->all_text =~ m{\A 【記者.+ 】 (.+) \z}x;
+        ($dateline) = $guess->all_text =~ m{\A 【記者.+ 】\s* (.+) \z}x;
     }
     elsif ($guess = $dom->at('.data_midlle_news_box01 dl dd ul li:first-child')) {
         ($dateline) = $guess->text;
