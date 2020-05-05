@@ -173,6 +173,8 @@ sub journalist {
         $ret = $guess->text;
     } elsif ($guess = $dom->at('div.single-post-meta a[rel="author"]')) {
         ($ret) = $guess->text =~ m<^工商時報 (.+)\z>x;
+    } elsif ($guess = $dom->at('#PostContent .head-section-content p.meta')) {
+        ($ret) = $guess->text =~ m<(記者.+?報導)>x;
     }
 
     $ret = undef if ($ret && is_NewspaperName($ret));
