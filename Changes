@@ -1,3 +1,5 @@
+  - Improve the extraction of journalist names on NTDTV
+
 v0.20.0 2020-05-05T21:22:48+0800
   - CTS: rewritten for quicker extraction.
 
