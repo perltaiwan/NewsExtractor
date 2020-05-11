@@ -81,6 +81,7 @@ use constant {
         '台視新聞',
         'The News Lens 關鍵評論網',
         '立場新聞',
+        '農傳媒',
     ],
 
     CATEGORY_NAMES => [
