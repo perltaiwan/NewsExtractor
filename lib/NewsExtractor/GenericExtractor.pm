@@ -59,7 +59,7 @@ sub headline {
         $title =~ s/\s* \p{Punct} \s* $site_name \s* \z//x;
     }
     if (defined($title)) {
-        my $delim = qr<(?: \p{Punct} | \| )>x;
+        my $delim = qr<(?: \p{Punct} | \| | │ )>x;
         $title =~ s/ \s* $delim \s* $RE{newspaper_names} \s* \z//x;
         $title =~ s/\A $RE{newspaper_names} \s* $delim \s* //x;
         $title =~ s/\r\n/\n/g;
