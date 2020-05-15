@@ -8,7 +8,7 @@ sub journalist {
     my $text = $self->content_text;
     my @patterns = (
         qr{（記者／?(\p{Letter}+)）\z},
-        qr{\n（(中國時報／.+)）\z},
+        qr{\n（(中國時報／.+)）(?:\n|\z)},
         qr{（(記者／.+?)）\z},
         qr{（(特派員.+?)）\z},
     );
