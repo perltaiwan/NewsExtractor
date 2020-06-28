@@ -1,4 +1,4 @@
-  - peopo: Convert the extracted dateline to iso8601 format.
+  - Convert extracted dateline to iso8601 format (peopo, fountmedia)
 
 v0.23.0 2020-05-15T23:10:02+0800
   - Improve the extraction of journalist names on CNA, ETToday, turnnewsapp.com
