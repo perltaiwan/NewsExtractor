@@ -9,8 +9,8 @@ sub dateline {
     my $el_date = $dom->at(".mid-news > .m-left-side > .maintype-wapper > h2");
     return undef unless $el_date;
 
-    my $dateline = ($el_date->text =~ s/[年月]/-/gr =~ s/日//r) . 'T23:59:59+0800';
-    $dateline =~ s/-([1-9])([T\-])/-0$1$2/g;
+    my $dateline = ($el_date->text =~ s/[年月]/-/gr =~ s/日//r);
+    $dateline =~ s/\b([0-9])\b/0$1/g;
     return $dateline;
 }
 
