@@ -1,3 +1,4 @@
+  - Add a site-specific extractor for www.twreporter.org
   - Convert extracted dateline to iso8601 format (pts)
 
 v0.24.0 2020-06-29T08:46:10+0800

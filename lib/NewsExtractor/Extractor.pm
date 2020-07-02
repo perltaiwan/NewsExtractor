@@ -34,6 +34,7 @@ use NewsExtractor::SiteSpecificExtractor::www_ttv_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_idn_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_fountmedia_io;
 use NewsExtractor::SiteSpecificExtractor::news_pts_org_tw;
+use NewsExtractor::SiteSpecificExtractor::www_twreporter_org;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 use NewsExtractor::SiteSpecificExtractor::ChinaTimes;
@@ -85,7 +86,8 @@ use constant {
         'www.ttv.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_ttv_com_tw',
         'www.idn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_idn_com_tw',
         'www.fountmedia.io' => 'NewsExtractor::SiteSpecificExtractor::www_fountmedia_io',
-        'news.pts.org.tw' => 'NewsExtractor::SiteSpecificExtractor::news_pts_org_tw'
+        'news.pts.org.tw' => 'NewsExtractor::SiteSpecificExtractor::news_pts_org_tw',
+        'www.twreporter.org' => 'NewsExtractor::SiteSpecificExtractor::www_twreporter_org'
     },
     CSSRuleSetByHost => {
         'www.taiwannews.com.tw' => {
