@@ -130,6 +130,9 @@ sub dateline {
 
     if ($dateline) {
         $dateline = normalize_whitespace($dateline);
+
+        $dateline =~ s<\A ([0-9]{4}) (\p{Punct}) ([0-9]{1,2}) \2 ([0-9]{1,2}) \z>< sprintf('%04d-%02d-%02d', $1, $3, $4) >ex;
+
         if ($dateline =~ /^([0-9]{4})[^0-9]/) {
             if ($1 > ((localtime)[5] + 1900)) {
                 $dateline = undef;
