@@ -3,6 +3,15 @@ use utf8;
 use Moo;
 extends 'NewsExtractor::GenericExtractor';
 
+around headline => sub {
+    my $orig = shift;
+    my $self = $_[0];
+    my $headline = $orig->(@_);
+    my $journalist = $self->journalist();
+    $headline =~ s/\s\|\s${journalist}$//;
+    return $headline;
+};
+
 sub journalist {
     my ($self) = @_;
     my $el = $self->dom->at('.article-info');
