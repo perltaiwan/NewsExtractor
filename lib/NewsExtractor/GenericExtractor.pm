@@ -78,7 +78,7 @@ sub dateline {
     if ($guess = $dom->at("meta[property='article:modified_time'], meta[property='article:published_time'], meta[itemprop=dateModified][content], meta[itemprop=datePublished][content]")) {
         $dateline = $guess->attr('content');
     }
-    elsif ($guess = $dom->at("time[itemprop=datePublished][datetime], h1 time[datetime], .func_time time[pubdate]")) {
+    elsif ($guess = $dom->at("time[itemprop=datePublished][datetime], h1 time[datetime], .func_time time[pubdate], span.time > time.post-published")) {
         $dateline = $guess->attr('datetime');
     }
     elsif ($guess = $dom->at(".reporter time, span.time, span.viewtime, header.article-desc time, .timeBox .updatetime span, .caption div.label-date, .contents_page span.date, .main-content span.date, .newsin_date, .news .date, .author .date, ul.info > li.date > span:nth-child(2), #newsHeadline span.datetime, article p.date, .post-meta > .icon-clock > span, .article_info_content span.info_time, .content time.page-date, .c_time, .newsContent p.time, .story_bady_info_author span:nth-child(1), div.title > div.time, div.article-meta div.article-date, address.authorInfor time, .entry-meta .date a, .author-links .posts-date, .top_title span.post_time, .node-inner > .submitted > span")) {
