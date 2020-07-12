@@ -40,6 +40,7 @@ use NewsExtractor::SiteSpecificExtractor::hk_crntt_com;
 use NewsExtractor::SiteSpecificExtractor::hk_on_cc;
 use NewsExtractor::SiteSpecificExtractor::www_xinhuanet_com;
 use NewsExtractor::SiteSpecificExtractor::news_cctv_com;
+use NewsExtractor::SiteSpecificExtractor::focustaiwan_tw;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 use NewsExtractor::SiteSpecificExtractor::ChinaTimes;
@@ -98,6 +99,7 @@ use constant {
         'hk.on.cc' => 'NewsExtractor::SiteSpecificExtractor::hk_on_cc',
         'www.xinhuanet.com' => 'NewsExtractor::SiteSpecificExtractor::www_xinhuanet_com',
         'news.cctv.com' => 'NewsExtractor::SiteSpecificExtractor::news_cctv_com',
+        'focustaiwan.tw' => 'NewsExtractor::SiteSpecificExtractor::focustaiwan_tw',
     },
     CSSRuleSetByHost => {
         'www.taiwannews.com.tw' => {
