@@ -27,6 +27,7 @@ lib/NewsExtractor/SiteSpecificExtractor/ETtoday.pm
 lib/NewsExtractor/SiteSpecificExtractor/UDN.pm
 lib/NewsExtractor/SiteSpecificExtractor/ctee_com_tw.pm
 lib/NewsExtractor/SiteSpecificExtractor/estate_ltn_com_tw.pm
+lib/NewsExtractor/SiteSpecificExtractor/focustaiwan_tw.pm
 lib/NewsExtractor/SiteSpecificExtractor/hk_crntt_com.pm
 lib/NewsExtractor/SiteSpecificExtractor/hk_on_cc.pm
 lib/NewsExtractor/SiteSpecificExtractor/money_udn_com.pm
