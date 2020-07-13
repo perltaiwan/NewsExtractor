@@ -22,6 +22,7 @@ use NewsExtractor::SiteSpecificExtractor::www_setn_com;
 use NewsExtractor::SiteSpecificExtractor::news_tnn_tw;
 use NewsExtractor::SiteSpecificExtractor::turnnewsapp_com;
 use NewsExtractor::SiteSpecificExtractor::news_cts_com_tw;
+use NewsExtractor::SiteSpecificExtractor::talk_ltn_com_tw;
 use NewsExtractor::SiteSpecificExtractor::estate_ltn_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_upmedia_mg;
 use NewsExtractor::SiteSpecificExtractor::ctee_com_tw;
@@ -84,6 +85,7 @@ use constant {
         'news.tnn.tw' => 'NewsExtractor::SiteSpecificExtractor::news_tnn_tw',
         'turnnewsapp.com' => 'NewsExtractor::SiteSpecificExtractor::turnnewsapp_com',
         'news.cts.com.tw' => 'NewsExtractor::SiteSpecificExtractor::news_cts_com_tw',
+        'talk.ltn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::talk_ltn_com_tw',
         'estate.ltn.com.tw' => 'NewsExtractor::SiteSpecificExtractor::estate_ltn_com_tw',
         'www.upmedia.mg' => 'NewsExtractor::SiteSpecificExtractor::www_upmedia_mg',
         'ctee.com.tw' => 'NewsExtractor::SiteSpecificExtractor::ctee_com_tw',
