@@ -78,9 +78,6 @@ sub dateline {
     elsif ($guess = $dom->at(".content .writer span:nth-child(2)")) {
         ($dateline) = $guess->text =~ m#([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2})#;
     }
-    elsif ($guess = $dom->at("div.contentBox div.content_date")) {
-        ($dateline) = $guess->text =~ m#([0-9]{4}\.[0-9]{2}\.[0-9]{2} \| [0-9]{2}:[0-9]{2})#;
-    }
     elsif ($guess = $dom->at("div.content-wrapper-right > div > div > div:nth-child(4), span.f12_15a_g2")) {
         ($dateline) = $guess->text =~ m#([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2})#;
     }
