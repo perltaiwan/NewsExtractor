@@ -29,7 +29,6 @@ use NewsExtractor::SiteSpecificExtractor::ctee_com_tw;
 use NewsExtractor::SiteSpecificExtractor::news_ebc_net_tw;
 use NewsExtractor::SiteSpecificExtractor::newnet_tw;
 use NewsExtractor::SiteSpecificExtractor::www_thestandnews_com;
-use NewsExtractor::SiteSpecificExtractor::www_hkcnews_com;
 use NewsExtractor::SiteSpecificExtractor::www_epochtimes_com;
 use NewsExtractor::SiteSpecificExtractor::www_ttv_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_idn_com_tw;
@@ -39,6 +38,8 @@ use NewsExtractor::SiteSpecificExtractor::www_twreporter_org;
 use NewsExtractor::SiteSpecificExtractor::new_ctv_com_tw;
 use NewsExtractor::SiteSpecificExtractor::hk_crntt_com;
 use NewsExtractor::SiteSpecificExtractor::hk_on_cc;
+use NewsExtractor::SiteSpecificExtractor::www_hkcna_hk;
+use NewsExtractor::SiteSpecificExtractor::www_hkcnews_com;
 use NewsExtractor::SiteSpecificExtractor::www_xinhuanet_com;
 use NewsExtractor::SiteSpecificExtractor::news_cctv_com;
 use NewsExtractor::SiteSpecificExtractor::focustaiwan_tw;
@@ -100,6 +101,7 @@ use constant {
         'new.ctv.com.tw' => 'NewsExtractor::SiteSpecificExtractor::new_ctv_com_tw',
         'hk.crntt.com' => 'NewsExtractor::SiteSpecificExtractor::hk_crntt_com',
         'hk.on.cc' => 'NewsExtractor::SiteSpecificExtractor::hk_on_cc',
+        'www.hkcna.hk' => 'NewsExtractor::SiteSpecificExtractor::www_hkcna_hk',
         'www.xinhuanet.com' => 'NewsExtractor::SiteSpecificExtractor::www_xinhuanet_com',
         'news.cctv.com' => 'NewsExtractor::SiteSpecificExtractor::news_cctv_com',
         'focustaiwan.tw' => 'NewsExtractor::SiteSpecificExtractor::focustaiwan_tw',
