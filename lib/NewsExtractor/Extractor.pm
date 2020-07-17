@@ -110,6 +110,12 @@ use constant {
         'www.digitimes.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_digitimes_com_tw',
     },
     CSSRuleSetByHost => {
+        'www.cw.com.tw' => {
+            headline => 'div.article__head h1',
+            dateline => 'div.article__detail > time',
+            journalist => 'div.author--item > a',
+            content_text => 'div.article__content',
+        },
         'www.taiwannews.com.tw' => {
             headline => 'h1.article-title',
             dateline => 'div.article-date',
