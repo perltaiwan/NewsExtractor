@@ -44,6 +44,7 @@ use NewsExtractor::SiteSpecificExtractor::www_xinhuanet_com;
 use NewsExtractor::SiteSpecificExtractor::news_cctv_com;
 use NewsExtractor::SiteSpecificExtractor::focustaiwan_tw;
 use NewsExtractor::SiteSpecificExtractor::newtalk_tw;
+use NewsExtractor::SiteSpecificExtractor::www_digitimes_com_tw;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 use NewsExtractor::SiteSpecificExtractor::ChinaTimes;
@@ -106,6 +107,7 @@ use constant {
         'news.cctv.com' => 'NewsExtractor::SiteSpecificExtractor::news_cctv_com',
         'focustaiwan.tw' => 'NewsExtractor::SiteSpecificExtractor::focustaiwan_tw',
         'newtalk.tw' => 'NewsExtractor::SiteSpecificExtractor::newtalk_tw',
+        'www.digitimes.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_digitimes_com_tw',
     },
     CSSRuleSetByHost => {
         'www.taiwannews.com.tw' => {
