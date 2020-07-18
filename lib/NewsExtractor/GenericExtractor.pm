@@ -11,7 +11,7 @@ use Mojo::DOM;
 use Types::Standard qw(Str Maybe);
 use NewsExtractor::Types qw(is_NewspaperName);
 
-use Importer 'NewsExtractor::TextUtil'  => qw( normalize_whitespace html2text );
+use Importer 'NewsExtractor::TextUtil'  => qw( normalize_whitespace html2text parse_dateline_ymdhms );
 use Importer 'NewsExtractor::Constants' => qw( %RE );
 
 with 'NewsExtractor::Role::ContentTextExtractor';
@@ -104,6 +104,10 @@ sub dateline {
     }
     elsif ($guess = $dom->at('#details_block .left .date, .article_header > .author > span:last-child')) {
         $dateline = normalize_whitespace $guess->text;
+    }
+    elsif ($guess = $dom->at('.timebox > .publishtime')) {
+        # howlife.cna.com.tw
+        $dateline = parse_dateline_ymdhms($guess->all_text, '+08:00');
     }
 
     if ($dateline) {
