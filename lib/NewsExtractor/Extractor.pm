@@ -45,6 +45,7 @@ use NewsExtractor::SiteSpecificExtractor::news_cctv_com;
 use NewsExtractor::SiteSpecificExtractor::focustaiwan_tw;
 use NewsExtractor::SiteSpecificExtractor::newtalk_tw;
 use NewsExtractor::SiteSpecificExtractor::www_digitimes_com_tw;
+use NewsExtractor::SiteSpecificExtractor::www_ustv_com_tw;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 use NewsExtractor::SiteSpecificExtractor::ChinaTimes;
@@ -62,6 +63,7 @@ has extractor => (
 
 use constant {
     SiteSpecificExtractorByHost => {
+        'www.ustv.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_ustv_com_tw',
         'www.epochtimes.com' => 'NewsExtractor::SiteSpecificExtractor::www_epochtimes_com',
         'www.hkcnews.com' => 'NewsExtractor::SiteSpecificExtractor::www_hkcnews_com',
         'www.thestandnews.com' => 'NewsExtractor::SiteSpecificExtractor::www_thestandnews_com',
