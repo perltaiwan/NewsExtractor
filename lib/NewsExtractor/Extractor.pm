@@ -46,6 +46,7 @@ use NewsExtractor::SiteSpecificExtractor::focustaiwan_tw;
 use NewsExtractor::SiteSpecificExtractor::newtalk_tw;
 use NewsExtractor::SiteSpecificExtractor::www_digitimes_com_tw;
 use NewsExtractor::SiteSpecificExtractor::www_ustv_com_tw;
+use NewsExtractor::SiteSpecificExtractor::www_mdnkids_com;
 use NewsExtractor::SiteSpecificExtractor::UDN;
 use NewsExtractor::SiteSpecificExtractor::ETtoday;
 use NewsExtractor::SiteSpecificExtractor::ChinaTimes;
@@ -111,6 +112,7 @@ use constant {
         'focustaiwan.tw' => 'NewsExtractor::SiteSpecificExtractor::focustaiwan_tw',
         'newtalk.tw' => 'NewsExtractor::SiteSpecificExtractor::newtalk_tw',
         'www.digitimes.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_digitimes_com_tw',
+        'www.mdnkids.com' => 'NewsExtractor::SiteSpecificExtractor::www_mdnkids_com',
     },
     CSSRuleSetByHost => {
         'www.cw.com.tw' => {
