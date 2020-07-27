@@ -12,7 +12,11 @@ sub dateline {
 
 sub journalist {
     my ($self) = @_;
-    my ($x) = $self->content_text =~ m{\A(\S+)／\S+報導\n};
+    my $txt = $self->content_text;
+    my ($x) = $txt =~ m{\A(\S+)／\S+報導\n};
+    unless ($x) {
+        ($x) = $txt =~ m{\A\S*(文／\S+\s+圖／\S+)\n};
+    }
     return $x;
 }
 
