@@ -69,7 +69,7 @@ sub dateline {
         $guess->at("a")->remove;
         $dateline = $guess->text;
     }
-    elsif ($guess = $dom->at("article.ndArticle_leftColumn div.ndArticle_creat, ul.info li.date, .cpInfo .cp, .nsa3 .tt27, .fncnews-content > .info > span.small-gray-text")) {
+    elsif ($guess = $dom->at("article.ndArticle_leftColumn div.ndArticle_creat, ul.info li.date, .cpInfo .cp, .nsa3 .tt27")) {
         ($dateline) = $guess->text =~ m#([0-9]{4}[\-/][0-9]{2}[\-/][0-9]{2} [0-9]{2}:[0-9]{2})#;
     }
     elsif ($guess = $dom->at(".news-toolbar .news-toolbar__cell")) {

@@ -3,7 +3,7 @@ use utf8;
 use Moo;
 extends 'NewsExtractor::GenericExtractor';
 
-use Importer 'NewsExtractor::TextUtil' => 'normalize_whitespace';
+use Importer 'NewsExtractor::TextUtil' => qw( normalize_whitespace parse_dateline_ymdhms );
 
 sub _build_content_text {
     my ($self) = @_;
@@ -27,6 +27,13 @@ sub journalist {
     my $text = normalize_whitespace($guess->all_text);
     my ($name) = $text =~ m/(?:東森新聞(?:\s*責任編輯)?)\s+(.+)$/;
     return $name;
+}
+
+
+sub dateline {
+    my ($self) = @_;
+    my $el = $self->dom->at(".fncnews-content > .info > span.small-gray-text") or return;
+    return parse_dateline_ymdhms($el->all_text(), '+08:00');
 }
 
 1;
