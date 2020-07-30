@@ -15,6 +15,9 @@ sub _build_content_text {
             && ($_->text =~ m/^★/)
         })->map('remove');
 
+    # Remove recommendations at the end of the article body.
+    $self->dom->at("#contentb div.raw-style > span:nth-child(1)")->following_nodes()->map('remove');
+
     return $self->SUPER::_build_content_text();
 }
 
