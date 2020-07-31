@@ -1,3 +1,4 @@
+  - re-format the dateline extracted from www.thinkingtaiwan.com
   - Handle a few special cases on chinatimes and ebc.
   - Improve the extraction of www.5ch.com.tw
   - Improve the recall of dateline and journalist on www.mdnkids.com
