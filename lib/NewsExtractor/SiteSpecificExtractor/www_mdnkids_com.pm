@@ -22,7 +22,7 @@ sub journalist {
     );
 
     my ($x);
-    for my $re (@regexps)
+    for my $re (@regexps) {
         ($x) = $txt =~ $re;
         last if $x;
     }
