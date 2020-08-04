@@ -1,3 +1,5 @@
+  - Add a site-specific extractor for m.news.cctv.com
+
 v0.35.0 2020-07-31T08:36:15+0800
   - re-format the dateline extracted from www.thinkingtaiwan.com
   - Handle a few special cases on chinatimes and ebc.

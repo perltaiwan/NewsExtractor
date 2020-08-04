@@ -42,6 +42,7 @@ use NewsExtractor::SiteSpecificExtractor::www_hkcna_hk;
 use NewsExtractor::SiteSpecificExtractor::www_hkcnews_com;
 use NewsExtractor::SiteSpecificExtractor::www_xinhuanet_com;
 use NewsExtractor::SiteSpecificExtractor::news_cctv_com;
+use NewsExtractor::SiteSpecificExtractor::m_news_cctv_com;
 use NewsExtractor::SiteSpecificExtractor::focustaiwan_tw;
 use NewsExtractor::SiteSpecificExtractor::newtalk_tw;
 use NewsExtractor::SiteSpecificExtractor::www_digitimes_com_tw;
@@ -110,6 +111,7 @@ use constant {
         'www.hkcna.hk' => 'NewsExtractor::SiteSpecificExtractor::www_hkcna_hk',
         'www.xinhuanet.com' => 'NewsExtractor::SiteSpecificExtractor::www_xinhuanet_com',
         'news.cctv.com' => 'NewsExtractor::SiteSpecificExtractor::news_cctv_com',
+        'm.news.cctv.com' => 'NewsExtractor::SiteSpecificExtractor::m_news_cctv_com',
         'focustaiwan.tw' => 'NewsExtractor::SiteSpecificExtractor::focustaiwan_tw',
         'newtalk.tw' => 'NewsExtractor::SiteSpecificExtractor::newtalk_tw',
         'www.digitimes.com.tw' => 'NewsExtractor::SiteSpecificExtractor::www_digitimes_com_tw',
