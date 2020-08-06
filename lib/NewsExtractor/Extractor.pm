@@ -119,6 +119,12 @@ use constant {
         'www.nownews.com' => 'NewsExtractor::SiteSpecificExtractor::www_nownews_com',
     },
     CSSRuleSetByHost => {
+        'www.eventsinfocus.org' => {
+            headline => 'h1.title > span',
+            dateline => 'div.content time.datetime',
+            journalist => '.block-field-blocknodenewsbody div.content > div:nth-child(1) > p:nth-child(1)',
+            content_text => '.block-field-blocknodenewsbody div.content > div:nth-child(1)',
+        },
         'www.5ch.com.tw' => {
             headline => 'h3.m-ti',
             dateline => 'div.more-about div.date',
