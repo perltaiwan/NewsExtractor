@@ -45,7 +45,7 @@
    "provides" : {
       "NewsExtractor" : {
          "file" : "lib/NewsExtractor.pm",
-         "version" : "v0.36.0"
+         "version" : "v0.37.0"
       },
       "NewsExtractor::Article" : {
          "file" : "lib/NewsExtractor/Article.pm"
@@ -179,6 +179,9 @@
       "NewsExtractor::SiteSpecificExtractor::www_ntdtv_com" : {
          "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_ntdtv_com.pm"
       },
+      "NewsExtractor::SiteSpecificExtractor::www_penghutimes_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_penghutimes_com.pm"
+      },
       "NewsExtractor::SiteSpecificExtractor::www_peopo_org" : {
          "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_peopo_org.pm"
       },
@@ -223,7 +226,7 @@
       }
    },
    "release_status" : "stable",
-   "version" : "v0.36.0",
+   "version" : "v0.37.0",
    "x_serialization_backend" : "JSON::PP version 2.97001",
    "x_spdx_expression" : "CC0-1.0",
    "x_static_install" : "1"
