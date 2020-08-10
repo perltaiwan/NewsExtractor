@@ -1,3 +1,5 @@
+  - Add a site-specific extractor for www.aljazeera.com
+
 v0.37.0 2020-08-08T13:11:45+0800
   - Add a site-specific extractor for www.penghutimes.com
   - dateline is reformatted differently. The time component is no longer default to 23:59:59
