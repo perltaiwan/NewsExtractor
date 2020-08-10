@@ -33,6 +33,12 @@ sub normalize_whitespace {
     return $_;
 }
 
+sub remove_control_characters {
+    local $_ = $_[0];
+    s/\p{PosixCntrl}//g;
+    return $_;
+}
+
 sub html2text {
     my $html = $_[0];
 
@@ -40,7 +46,7 @@ sub html2text {
     $content_dom->find('br')->map(replace => "\n");
     $content_dom->find('div,p')->map(append => "\n\n");
 
-    my @paragraphs = grep { $_ ne '' } map { normalize_whitespace($_) } split /\n\n+/, $content_dom->all_text;
+    my @paragraphs = grep { $_ ne '' } map { remove_control_characters($_) } map { normalize_whitespace($_) } split /\n\n+/, $content_dom->all_text;
 
     return join "\n\n", @paragraphs;
 }
