@@ -1,3 +1,4 @@
+  - Improve the accuracy of extraction of journalist and dateline on news.pts.gov.tw
   - Improve the recall of the extractor of news.tnn.tw
   - Add a site-specific extractor for www.aljazeera.com
 

@@ -56,7 +56,7 @@ sub reformat_dateline {
     $offset //= '';
 
     my @t = $text =~ m/([0-9]+)/g;
-    return undef unless 3 <= @t && @t <= 6;
+    return undef unless 3 <= @t;
 
     my $format_date = '%04d-%02d-%02d';
     my $format_time = '%02d:%02d:%02d';
