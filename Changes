@@ -1,3 +1,4 @@
+v0.39.0 2020-08-23T22:19:18+0900
   - Improve the extraction of dateline of www.idn.com.tw
   - Add a site-specific extractor for www.bbc.com
   - Fix the format of extracted dateline of www.rti.org.tw
