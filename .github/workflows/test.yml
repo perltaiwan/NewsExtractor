@@ -9,9 +9,11 @@ jobs:
       image: "perl:5.32"
     steps:
       - uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: cpanm -q -n --no-man-pages --installdeps .
+      - name: Install Toolchain
+        run: cpanm -q -n --no-man-pages App::cpm
       - name: Install Test2::Harness
-        run: cpanm -q -n --no-man-pages Test2::Harness
+        run: cpm install -g Test2::Harness
+     - name: Install Dependencies
+        run: cpm install -g
       - name: yath
         run: yath test --qvf
