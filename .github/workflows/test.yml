@@ -13,7 +13,7 @@ jobs:
         run: cpanm -q -n --no-man-pages App::cpm
       - name: Install Test2::Harness
         run: cpm install -g Test2::Harness
-     - name: Install Dependencies
+      - name: Install Dependencies
         run: cpm install -g
       - name: yath
         run: yath test --qvf
