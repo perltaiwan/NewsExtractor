@@ -1,0 +1,14 @@
+name: test
+
+on: [ push ]
+
+jobs:
+  test:
+    container:
+      - image: perl:5.32
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: cpanm -q -n --no-man-pages --installdeps .
+      - name: prove
+        run: prove -v -r t/
