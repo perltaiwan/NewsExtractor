@@ -1,4 +1,4 @@
-name: test
+mname: test
 
 on: [ push ]
 
@@ -17,4 +17,4 @@ jobs:
       - name: Install Dependencies
         run: cpanm -q -n --no-man-pages --installdeps .
       - name: prove
-        run: prove -v -r t/
+        run: prove -lvr t/
