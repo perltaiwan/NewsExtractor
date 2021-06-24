@@ -1,0 +1,257 @@
+{
+   "abstract" : "download and extract news articles from Internet.",
+   "author" : [
+      "Kang-min Liu <gugod@gugod.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "App::ModuleBuildTiny version 0.029",
+   "license" : [
+      "unrestricted"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : 2
+   },
+   "name" : "NewsExtractor",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "Module::Build::Tiny" : "0.034"
+         }
+      },
+      "develop" : {
+         "requires" : {
+            "App::ModuleBuildTiny" : "0.029"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "File::Slurp" : "0",
+            "HTML::ExtractContent" : "0",
+            "HTTP::Date" : "0",
+            "IO::Socket::SSL" : "2.009",
+            "Importer" : "0",
+            "JSON" : "0",
+            "Mojolicious" : "8.25",
+            "Moo" : "0",
+            "Ref::Util" : "0",
+            "SemanticWeb::Schema" : "0",
+            "Test2::V0" : "0",
+            "Try::Tiny" : "0",
+            "Type::Tiny" : "0",
+            "Types::URI" : "0",
+            "YAML" : "0"
+         }
+      }
+   },
+   "provides" : {
+      "NewsExtractor" : {
+         "file" : "lib/NewsExtractor.pm",
+         "version" : "v0.42.0"
+      },
+      "NewsExtractor::Article" : {
+         "file" : "lib/NewsExtractor/Article.pm"
+      },
+      "NewsExtractor::CSSExtractor" : {
+         "file" : "lib/NewsExtractor/CSSExtractor.pm"
+      },
+      "NewsExtractor::CSSRuleSet" : {
+         "file" : "lib/NewsExtractor/CSSRuleSet.pm"
+      },
+      "NewsExtractor::Constants" : {
+         "file" : "lib/NewsExtractor/Constants.pm"
+      },
+      "NewsExtractor::Download" : {
+         "file" : "lib/NewsExtractor/Download.pm"
+      },
+      "NewsExtractor::Error" : {
+         "file" : "lib/NewsExtractor/Error.pm"
+      },
+      "NewsExtractor::Extractor" : {
+         "file" : "lib/NewsExtractor/Extractor.pm"
+      },
+      "NewsExtractor::GenericExtractor" : {
+         "file" : "lib/NewsExtractor/GenericExtractor.pm"
+      },
+      "NewsExtractor::JSONLDExtractor" : {
+         "file" : "lib/NewsExtractor/JSONLDExtractor.pm"
+      },
+      "NewsExtractor::Role::ContentTextExtractor" : {
+         "file" : "lib/NewsExtractor/Role/ContentTextExtractor.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::ChinaTimes" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/ChinaTimes.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::ETtoday" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/ETtoday.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::UDN" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/UDN.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::ctee_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/ctee_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::estate_ltn_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/estate_ltn_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::focustaiwan_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/focustaiwan_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::hk_crntt_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/hk_crntt_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::hk_on_cc" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/hk_on_cc.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::m_news_cctv_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/m_news_cctv_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::money_udn_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/money_udn_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::new_ctv_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/new_ctv_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::newnet_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/newnet_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::news_cctv_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/news_cctv_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::news_cts_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/news_cts_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::news_ebc_net_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/news_ebc_net_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::news_pts_org_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/news_pts_org_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::news_tnn_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/news_tnn_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::news_ttv_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/news_ttv_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::news_tvbs_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/news_tvbs_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::newtalk_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/newtalk_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::talk_ltn_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/talk_ltn_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::turnnewsapp_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/turnnewsapp_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_aljazeera_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_aljazeera_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_allnews_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_allnews_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_bbc_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_bbc_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_bcc_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_bcc_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_digitimes_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_digitimes_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_epochtimes_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_epochtimes_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_fountmedia_io" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_fountmedia_io.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_hkcna_hk" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_hkcna_hk.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_hkcnews_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_hkcnews_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_idn_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_idn_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_ksnews_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_ksnews_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_mdnkids_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_mdnkids_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_nownews_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_nownews_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_ntdtv_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_ntdtv_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_penghutimes_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_penghutimes_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_peopo_org" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_peopo_org.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_rti_org_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_rti_org_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_rvn_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_rvn_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_setn_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_setn_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_taipeitimes_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_taipeitimes_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_thestandnews_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_thestandnews_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_ttv_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_ttv_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_twreporter_org" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_twreporter_org.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_upmedia_mg" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_upmedia_mg.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_ustv_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_ustv_com_tw.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::www_xinhuanet_com" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/www_xinhuanet_com.pm"
+      },
+      "NewsExtractor::SiteSpecificExtractor::yimedia_com_tw" : {
+         "file" : "lib/NewsExtractor/SiteSpecificExtractor/yimedia_com_tw.pm"
+      },
+      "NewsExtractor::TXExtractor" : {
+         "file" : "lib/NewsExtractor/TXExtractor.pm"
+      },
+      "NewsExtractor::TextUtil" : {
+         "file" : "lib/NewsExtractor/TextUtil.pm"
+      },
+      "NewsExtractor::Types" : {
+         "file" : "lib/NewsExtractor/Types.pm"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/perltaiwan/NewsExtractor/issues"
+      },
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/perltaiwan/NewsExtractor.git",
+         "web" : "https://github.com/perltaiwan/NewsExtractor"
+      }
+   },
+   "version" : "v0.42.0",
+   "x_serialization_backend" : "JSON::PP version 4.04",
+   "x_spdx_expression" : "CC0-1.0",
+   "x_static_install" : "1"
+}
